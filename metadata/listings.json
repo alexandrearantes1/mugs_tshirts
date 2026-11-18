@@ -11,11 +11,16 @@
       "category": "Quantum Mechanics",
       "mockup_base": "11oz White Ceramic Mug",
       "description": "For those mornings when you’re feeling a bit of both, this \"Schrödinger’s Cat\" mug features my original, hand-drawn illustration of physics’ most famous—and famously undecided—feline. I loved bringing this nerdy paradox to life with a detailed, split-character sketch that gently blends an adorable kitty with a skeletal side. It’s printed on a sturdy, cozy ceramic mug that is both microwave and dishwasher safe, ready to hold your favorite morning brew. A perfect, quirky gift for science geeks, cat lovers, or deep thinkers, it’s sure to add a little existential humor to any desk. Because each one is printed to order just for you, your mug gets made with plenty of care the moment you purchase.",
+      "print_files": [
+        "mugs/shrodingers/shordinger_print_2.png",
+        "mugs/shrodingers/Shrodinger_print.png"
+      ],
       "images": [
-        { "file": "mugs/shrodingers/shrodinger_2.png", "label": "Final Mug Mockup", "type": "mockup" },
-        { "file": "mugs/shrodingers/shrodinger.png", "label": "Initial Split Mockup", "type": "mockup" },
-        { "file": "mugs/shrodingers/shordinger_print_2.png", "label": "Refined Print Artwork", "type": "print_ready" },
-        { "file": "mugs/shrodingers/Shrodinger_print.png", "label": "Stippled Print Artwork", "type": "print_ready" }
+        { "file": "mugs/shrodingers/shrodinger_2.png", "label": "Sunlit Desk", "type": "mockup" },
+        { "file": "mugs/shrodingers/placement_1.png", "label": "Workspace Desk", "type": "mockup" },
+        { "file": "mugs/shrodingers/placement_2.png", "label": "Bistro Cafe", "type": "mockup" },
+        { "file": "mugs/shrodingers/placement_3.png", "label": "Reading Corner", "type": "mockup" },
+        { "file": "mugs/shrodingers/shrodinger.png", "label": "Initial Split Mockup", "type": "mockup" }
       ]
     },
     {
@@ -27,7 +32,10 @@
       "mockup_base": "11oz White Ceramic Mug",
       "description": "Delicate Bohr-inspired orbital rings, nucleus cluster, and sine wave harmonics rendered in crisp minimalist line art on a white 11oz ceramic mug.",
       "images": [
-        { "file": "mugs/atoms/image.png", "label": "Sunlit Desk Mockup", "type": "mockup" }
+        { "file": "mugs/atoms/image.png", "label": "Sunlit Desk", "type": "mockup" },
+        { "file": "mugs/atoms/placement_1.png", "label": "Workspace Desk", "type": "mockup" },
+        { "file": "mugs/atoms/placement_2.png", "label": "Bistro Cafe", "type": "mockup" },
+        { "file": "mugs/atoms/placement_3.png", "label": "Reading Corner", "type": "mockup" }
       ]
     },
     {
@@ -39,7 +47,10 @@
       "mockup_base": "11oz White Ceramic Mug",
       "description": "Fine-line filament bulb with heart-shaped glowing wire, orbital electron paths, and frequency wave accents.",
       "images": [
-        { "file": "mugs/love/image.png", "label": "Sunlit Desk Mockup", "type": "mockup" }
+        { "file": "mugs/love/image.png", "label": "Sunlit Desk", "type": "mockup" },
+        { "file": "mugs/love/placement_1.png", "label": "Workspace Desk", "type": "mockup" },
+        { "file": "mugs/love/placement_2.png", "label": "Bistro Cafe", "type": "mockup" },
+        { "file": "mugs/love/placement_3.png", "label": "Reading Corner", "type": "mockup" }
       ]
     },
     {
@@ -51,7 +62,10 @@
       "mockup_base": "11oz White Ceramic Mug",
       "description": "A sphere poised at the crest of a steep incline overlaid with dashed trajectory curves, harmonic waves, and subtle celestial coordinates.",
       "images": [
-        { "file": "mugs/energy/image.png", "label": "Sunlit Desk Mockup", "type": "mockup" }
+        { "file": "mugs/energy/image.png", "label": "Sunlit Desk", "type": "mockup" },
+        { "file": "mugs/energy/placement_1.png", "label": "Workspace Desk", "type": "mockup" },
+        { "file": "mugs/energy/placement_2.png", "label": "Bistro Cafe", "type": "mockup" },
+        { "file": "mugs/energy/placement_3.png", "label": "Reading Corner", "type": "mockup" }
       ]
     },
     {
@@ -63,7 +77,10 @@
       "mockup_base": "11oz White Ceramic Mug",
       "description": "Newton's falling apple encircled by planetary orbits, gravitational field lines, and minimalist star accents.",
       "images": [
-        { "file": "mugs/force/image.png", "label": "Sunlit Desk Mockup", "type": "mockup" }
+        { "file": "mugs/force/image.png", "label": "Sunlit Desk", "type": "mockup" },
+        { "file": "mugs/force/placement_1.png", "label": "Workspace Desk", "type": "mockup" },
+        { "file": "mugs/force/placement_2.png", "label": "Bistro Cafe", "type": "mockup" },
+        { "file": "mugs/force/placement_3.png", "label": "Reading Corner", "type": "mockup" }
       ]
     },
     {
@@ -75,7 +92,10 @@
       "mockup_base": "11oz White Ceramic Mug",
       "description": "Fine-line hourglass with flowing sand, intersecting wave functions, and dispersing orbital particles.",
       "images": [
-        { "file": "mugs/entropy/image.png", "label": "Sunlit Desk Mockup", "type": "mockup" }
+        { "file": "mugs/entropy/image.png", "label": "Sunlit Desk", "type": "mockup" },
+        { "file": "mugs/entropy/placement_1.png", "label": "Workspace Desk", "type": "mockup" },
+        { "file": "mugs/entropy/placement_2.png", "label": "Bistro Cafe", "type": "mockup" },
+        { "file": "mugs/entropy/placement_3.png", "label": "Reading Corner", "type": "mockup" }
       ]
     }
   ],

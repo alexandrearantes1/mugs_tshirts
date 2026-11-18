@@ -79,7 +79,7 @@
     .header-meta {
       font-size: 0.85rem;
       color: var(--text-muted);
-      max-width: 380px;
+      max-width: 390px;
     }
 
     /* Toolbar */
@@ -178,12 +178,6 @@
       transition: opacity 0.25s ease, transform 0.5s ease;
     }
 
-    .card-media img.contain-mode {
-      object-fit: contain;
-      padding: 1.5rem;
-      background: #ffffff;
-    }
-
     .card-media:hover img {
       transform: scale(1.015);
     }
@@ -259,6 +253,11 @@
       border-bottom: 1px solid var(--border);
       background: #fcfbf9;
       overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .variant-strip::-webkit-scrollbar {
+      display: none;
     }
 
     .variant-pill {
@@ -310,7 +309,6 @@
     }
 
     .card-subtitle {
-      font-size: 0.82rem;
       color: var(--text-muted);
       font-style: italic;
       font-family: 'Cormorant Garamond', Georgia, serif;
@@ -446,25 +444,24 @@
         <h1>Minimalist Physics Mug Collection</h1>
       </div>
       <p class="header-meta">
-        Fine-line black ink illustrations on 11oz white ceramic mugs. Click any image to inspect full resolution or switch between mockup and print-ready views.
+        Fine-line black ink illustrations on 11oz white ceramic mugs. Switch between studio and lifestyle placement mockups on each card or click any image to inspect full resolution.
       </p>
     </header>
 
     <div class="toolbar">
       <div class="filter-group" id="filters">
         <button class="filter-btn active" data-filter="all">All Designs (6)</button>
-        <button class="filter-btn" data-filter="multi">Multi-Image Series</button>
         <button class="filter-btn" data-filter="quantum">Quantum &amp; Matter</button>
         <button class="filter-btn" data-filter="mechanics">Classical &amp; Thermodynamics</button>
       </div>
-      <div class="count-label" id="countLabel">Showing 6 of 6 mugs &middot; 9 images</div>
+      <div class="count-label" id="countLabel">Showing 6 of 6 mugs &middot; 25 mockups</div>
     </div>
 
     <main class="grid" id="mugGrid"></main>
 
     <footer>
       <span>Custom Etsy Mug Mockup Creation &mdash; Fine-Line Physics Series</span>
-      <span>11oz White Ceramic &middot; Print-on-Demand Ready</span>
+      <span>11oz White Ceramic &middot; Studio &amp; Lifestyle Placement Mockups</span>
     </footer>
   </div>
 
@@ -501,23 +498,23 @@
         images: [
           {
             src: './mugs/shrodingers/shrodinger_2.png',
-            label: 'Final Mug Mockup',
-            type: 'mockup'
+            label: 'Sunlit Desk'
+          },
+          {
+            src: './mugs/shrodingers/placement_1.png',
+            label: 'Workspace Desk'
+          },
+          {
+            src: './mugs/shrodingers/placement_2.png',
+            label: 'Bistro Cafe'
+          },
+          {
+            src: './mugs/shrodingers/placement_3.png',
+            label: 'Reading Corner'
           },
           {
             src: './mugs/shrodingers/shrodinger.png',
-            label: 'Initial Split Mockup',
-            type: 'mockup'
-          },
-          {
-            src: './mugs/shrodingers/shordinger_print_2.png',
-            label: 'Refined Print Artwork',
-            type: 'print'
-          },
-          {
-            src: './mugs/shrodingers/Shrodinger_print.png',
-            label: 'Stippled Print Artwork',
-            type: 'print'
+            label: 'Initial Split Mockup'
           }
         ]
       },
@@ -532,8 +529,19 @@
         images: [
           {
             src: './mugs/atoms/image.png',
-            label: 'Sunlit Desk Mockup',
-            type: 'mockup'
+            label: 'Sunlit Desk'
+          },
+          {
+            src: './mugs/atoms/placement_1.png',
+            label: 'Workspace Desk'
+          },
+          {
+            src: './mugs/atoms/placement_2.png',
+            label: 'Bistro Cafe'
+          },
+          {
+            src: './mugs/atoms/placement_3.png',
+            label: 'Reading Corner'
           }
         ]
       },
@@ -548,8 +556,19 @@
         images: [
           {
             src: './mugs/love/image.png',
-            label: 'Sunlit Desk Mockup',
-            type: 'mockup'
+            label: 'Sunlit Desk'
+          },
+          {
+            src: './mugs/love/placement_1.png',
+            label: 'Workspace Desk'
+          },
+          {
+            src: './mugs/love/placement_2.png',
+            label: 'Bistro Cafe'
+          },
+          {
+            src: './mugs/love/placement_3.png',
+            label: 'Reading Corner'
           }
         ]
       },
@@ -564,8 +583,19 @@
         images: [
           {
             src: './mugs/energy/image.png',
-            label: 'Sunlit Desk Mockup',
-            type: 'mockup'
+            label: 'Sunlit Desk'
+          },
+          {
+            src: './mugs/energy/placement_1.png',
+            label: 'Workspace Desk'
+          },
+          {
+            src: './mugs/energy/placement_2.png',
+            label: 'Bistro Cafe'
+          },
+          {
+            src: './mugs/energy/placement_3.png',
+            label: 'Reading Corner'
           }
         ]
       },
@@ -580,8 +610,19 @@
         images: [
           {
             src: './mugs/force/image.png',
-            label: 'Sunlit Desk Mockup',
-            type: 'mockup'
+            label: 'Sunlit Desk'
+          },
+          {
+            src: './mugs/force/placement_1.png',
+            label: 'Workspace Desk'
+          },
+          {
+            src: './mugs/force/placement_2.png',
+            label: 'Bistro Cafe'
+          },
+          {
+            src: './mugs/force/placement_3.png',
+            label: 'Reading Corner'
           }
         ]
       },
@@ -596,8 +637,19 @@
         images: [
           {
             src: './mugs/entropy/image.png',
-            label: 'Sunlit Desk Mockup',
-            type: 'mockup'
+            label: 'Sunlit Desk'
+          },
+          {
+            src: './mugs/entropy/placement_1.png',
+            label: 'Workspace Desk'
+          },
+          {
+            src: './mugs/entropy/placement_2.png',
+            label: 'Bistro Cafe'
+          },
+          {
+            src: './mugs/entropy/placement_3.png',
+            label: 'Reading Corner'
           }
         ]
       }
@@ -620,14 +672,13 @@
 
     function getFilteredMugs() {
       if (state.filter === 'all') return MUGS;
-      if (state.filter === 'multi') return MUGS.filter(m => m.images.length > 1);
       return MUGS.filter(m => m.category === state.filter);
     }
 
     function renderGrid() {
       const list = getFilteredMugs();
       const totalImgs = list.reduce((sum, m) => sum + m.images.length, 0);
-      countLabelEl.textContent = `Showing ${list.length} of ${MUGS.length} mugs · ${totalImgs} image${totalImgs === 1 ? '' : 's'}`;
+      countLabelEl.textContent = `Showing ${list.length} of ${MUGS.length} mugs · ${totalImgs} mockups`;
 
       gridEl.innerHTML = list.map(mug => {
         const idx = state.activeImageIdx[mug.id] || 0;
@@ -640,7 +691,6 @@
               <img
                 src="${currentImg.src}"
                 alt="${mug.title} — ${currentImg.label}"
-                class="${currentImg.type === 'print' ? 'contain-mode' : ''}"
                 data-action="zoom"
                 data-mug-id="${mug.id}"
               />
