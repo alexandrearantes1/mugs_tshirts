@@ -99,22 +99,90 @@
       ]
     }
   ],
-  "tshirt_concepts_from_chat": [
+  "tshirts": [
     {
-      "id": "tshirt-espresso-01",
-      "title": "More Espresso, Less Depresso",
-      "chosen_style": "Modern Geometric (Delicate Fine Arch & Dots / White ink on Black Crewneck & Earth tones on Sand Crewneck)"
+      "id": "tshirt-schrodinger-01",
+      "folder": "tshirts/shrodingers",
+      "title": "Schrödinger’s Cat",
+      "subtitle": "Wanted: Dead & Alive",
+      "category": "Quantum Mechanics",
+      "mockup_base": "Unisex Heavyweight Cotton Crew-Neck Tee (White, Cream, Black)",
+      "images": [
+        { "file": "tshirts/shrodingers/image.png", "label": "Living Room (White Tee)", "type": "mockup" },
+        { "file": "tshirts/shrodingers/placement_1.png", "label": "Coffee Shop (Black Tee)", "type": "mockup" },
+        { "file": "tshirts/shrodingers/placement_2.png", "label": "Park Walk (Cream Tee)", "type": "mockup" },
+        { "file": "tshirts/shrodingers/placement_3.png", "label": "Studio Lounge (Black Tee)", "type": "mockup" }
+      ]
     },
     {
-      "id": "tshirt-wireless-01",
-      "title": "Born to be Wireless",
-      "chosen_style": "Miniature Block — 01 Centered Stack (Tiny WiFi symbol above widely-spaced uppercase BORN TO BE WIRELESS on Black Crewneck)",
-      "print_specs": {
-        "width": 3951,
-        "height": 4800,
-        "dpi": 300,
-        "transparent": true
-      }
+      "id": "tshirt-atoms-02",
+      "folder": "tshirts/atoms",
+      "title": "Don't Trust Atoms",
+      "subtitle": "They Make Up Everything",
+      "category": "Atomic Physics",
+      "mockup_base": "Unisex Heavyweight Cotton Crew-Neck Tee (White, Cream, Black)",
+      "images": [
+        { "file": "tshirts/atoms/image.png", "label": "Living Room (White Tee)", "type": "mockup" },
+        { "file": "tshirts/atoms/placement_1.png", "label": "Coffee Shop (Black Tee)", "type": "mockup" },
+        { "file": "tshirts/atoms/placement_2.png", "label": "Park Walk (Cream Tee)", "type": "mockup" },
+        { "file": "tshirts/atoms/placement_3.png", "label": "Studio Lounge (Black Tee)", "type": "mockup" }
+      ]
+    },
+    {
+      "id": "tshirt-love-03",
+      "folder": "tshirts/love",
+      "title": "Watt Is Love",
+      "subtitle": "Baby Don't Hertz Me",
+      "category": "Electromagnetism",
+      "mockup_base": "Unisex Heavyweight Cotton Crew-Neck Tee (White, Cream, Black)",
+      "images": [
+        { "file": "tshirts/love/image.png", "label": "Living Room (White Tee)", "type": "mockup" },
+        { "file": "tshirts/love/placement_1.png", "label": "Coffee Shop (Black Tee)", "type": "mockup" },
+        { "file": "tshirts/love/placement_2.png", "label": "Park Walk (Cream Tee)", "type": "mockup" },
+        { "file": "tshirts/love/placement_3.png", "label": "Studio Lounge (Black Tee)", "type": "mockup" }
+      ]
+    },
+    {
+      "id": "tshirt-energy-04",
+      "folder": "tshirts/energy",
+      "title": "I Have Potential",
+      "subtitle": "Energy",
+      "category": "Classical Mechanics",
+      "mockup_base": "Unisex Heavyweight Cotton Crew-Neck Tee (White, Cream, Black)",
+      "images": [
+        { "file": "tshirts/energy/image.png", "label": "Living Room (White Tee)", "type": "mockup" },
+        { "file": "tshirts/energy/placement_1.png", "label": "Coffee Shop (Black Tee)", "type": "mockup" },
+        { "file": "tshirts/energy/placement_2.png", "label": "Park Walk (Cream Tee)", "type": "mockup" },
+        { "file": "tshirts/energy/placement_3.png", "label": "Studio Lounge (Black Tee)", "type": "mockup" }
+      ]
+    },
+    {
+      "id": "tshirt-force-05",
+      "folder": "tshirts/force",
+      "title": "May The Force",
+      "subtitle": "Be Mass Times Acceleration",
+      "category": "Newtonian Mechanics",
+      "mockup_base": "Unisex Heavyweight Cotton Crew-Neck Tee (White, Cream, Black)",
+      "images": [
+        { "file": "tshirts/force/image.png", "label": "Living Room (White Tee)", "type": "mockup" },
+        { "file": "tshirts/force/placement_1.png", "label": "Coffee Shop (Black Tee)", "type": "mockup" },
+        { "file": "tshirts/force/placement_2.png", "label": "Park Walk (Cream Tee)", "type": "mockup" },
+        { "file": "tshirts/force/placement_3.png", "label": "Studio Lounge (Black Tee)", "type": "mockup" }
+      ]
+    },
+    {
+      "id": "tshirt-entropy-06",
+      "folder": "tshirts/entropy",
+      "title": "Entropy",
+      "subtitle": "It Is Not What It Used To Be",
+      "category": "Thermodynamics",
+      "mockup_base": "Unisex Heavyweight Cotton Crew-Neck Tee (White, Cream, Black)",
+      "images": [
+        { "file": "tshirts/entropy/image.png", "label": "Living Room (White Tee)", "type": "mockup" },
+        { "file": "tshirts/entropy/placement_1.png", "label": "Coffee Shop (Black Tee)", "type": "mockup" },
+        { "file": "tshirts/entropy/placement_2.png", "label": "Park Walk (Cream Tee)", "type": "mockup" },
+        { "file": "tshirts/entropy/placement_3.png", "label": "Studio Lounge (Black Tee)", "type": "mockup" }
+      ]
     }
   ]
 }

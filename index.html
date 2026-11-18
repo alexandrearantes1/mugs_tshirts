@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Physics & Cat Pun Mugs — Product Mockup Collection</title>
+  <title>Minimalist Physics Collection — Mugs &amp; Apparel</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -11,6 +11,7 @@
     :root {
       --bg: #faf9f6;
       --surface: #ffffff;
+      --surface-subtle: #fcfbf9;
       --text: #181816;
       --text-muted: #6e6c66;
       --text-subtle: #9c9991;
@@ -23,6 +24,11 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -32,7 +38,14 @@
       font-weight: 300;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      padding: 0 1.5rem 5rem;
+      padding: 0 1.25rem 4.5rem;
+      overflow-x: hidden;
+    }
+
+    @media (min-width: 768px) {
+      body {
+        padding: 0 2rem 5.5rem;
+      }
     }
 
     .container {
@@ -42,34 +55,37 @@
 
     /* Header */
     header {
-      padding: 4.5rem 0 3.5rem;
+      padding: 2.75rem 0 2.25rem;
       border-bottom: 1px solid var(--border);
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
       display: flex;
       flex-direction: column;
-      gap: 1.25rem;
+      gap: 1rem;
     }
 
     @media (min-width: 768px) {
       header {
+        padding: 4.5rem 0 3.25rem;
+        margin-bottom: 2.75rem;
         flex-direction: row;
         align-items: flex-end;
         justify-content: space-between;
+        gap: 2rem;
       }
     }
 
     .eyebrow {
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--text-muted);
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.5rem;
       font-weight: 400;
     }
 
     h1 {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(2.25rem, 4vw, 3.25rem);
+      font-size: clamp(2rem, 4.5vw, 3.25rem);
       font-weight: 400;
       letter-spacing: -0.01em;
       line-height: 1.1;
@@ -77,35 +93,80 @@
     }
 
     .header-meta {
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       color: var(--text-muted);
-      max-width: 390px;
+      max-width: 410px;
     }
 
     /* Toolbar */
     .toolbar {
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
+      flex-direction: column;
       gap: 1rem;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2.25rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    @media (min-width: 860px) {
+      .toolbar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .toolbar-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    @media (min-width: 640px) {
+      .toolbar-controls {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+      }
     }
 
     .filter-group {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
+      overflow-x: auto;
       gap: 0.4rem;
+      scrollbar-width: none;
+      padding-bottom: 2px;
+    }
+
+    .filter-group::-webkit-scrollbar {
+      display: none;
+    }
+
+    .toolbar-divider {
+      display: none;
+      width: 1px;
+      height: 1.35rem;
+      background: var(--border);
+      margin: 0 0.25rem;
+    }
+
+    @media (min-width: 640px) {
+      .toolbar-divider {
+        display: block;
+      }
     }
 
     .filter-btn {
       background: transparent;
       border: 1px solid var(--border);
       color: var(--text-muted);
-      padding: 0.45rem 0.95rem;
+      padding: 0.48rem 0.9rem;
+      min-height: 36px;
       font-family: inherit;
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       letter-spacing: 0.04em;
+      white-space: nowrap;
       cursor: pointer;
       transition: all 0.2s ease;
     }
@@ -122,28 +183,82 @@
     }
 
     .count-label {
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       color: var(--text-subtle);
       letter-spacing: 0.05em;
       text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* Section Header */
+    .section-block {
+      margin-bottom: 4rem;
+    }
+
+    .section-block:last-of-type {
+      margin-bottom: 1rem;
+    }
+
+    .section-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    @media (min-width: 640px) {
+      .section-header {
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-between;
+      }
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(1.55rem, 3vw, 2rem);
+      font-weight: 400;
+      color: var(--text);
+    }
+
+    .section-subtitle {
+      font-size: 0.78rem;
+      color: var(--text-subtle);
+      letter-spacing: 0.04em;
     }
 
     /* Grid */
     .grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 2.25rem;
+      gap: 1.75rem;
     }
 
-    @media (min-width: 680px) {
+    @media (min-width: 640px) {
       .grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
       }
     }
 
-    @media (min-width: 1040px) {
+    @media (min-width: 1024px) {
       .grid {
         grid-template-columns: repeat(3, 1fr);
+        gap: 2.25rem;
+      }
+    }
+
+    .grid.paired-grid {
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+
+    @media (min-width: 720px) {
+      .grid.paired-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.25rem;
       }
     }
 
@@ -178,33 +293,48 @@
       transition: opacity 0.25s ease, transform 0.5s ease;
     }
 
-    .card-media:hover img {
-      transform: scale(1.015);
+    @media (hover: hover) {
+      .card-media:hover img {
+        transform: scale(1.015);
+      }
     }
 
     .media-badge {
       position: absolute;
-      top: 0.85rem;
-      left: 0.85rem;
-      background: rgba(255, 255, 255, 0.9);
+      top: 0.75rem;
+      left: 0.75rem;
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(4px);
       border: 1px solid var(--border);
-      padding: 0.22rem 0.6rem;
-      font-size: 0.68rem;
+      padding: 0.2rem 0.55rem;
+      font-size: 0.66rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--text-muted);
       pointer-events: none;
     }
 
+    .media-type-tag {
+      position: absolute;
+      bottom: 0.75rem;
+      left: 0.75rem;
+      background: rgba(24, 24, 22, 0.82);
+      color: #ffffff;
+      padding: 0.18rem 0.55rem;
+      font-size: 0.64rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      pointer-events: none;
+    }
+
     .media-count {
       position: absolute;
-      top: 0.85rem;
-      right: 0.85rem;
+      top: 0.75rem;
+      right: 0.75rem;
       background: rgba(24, 24, 22, 0.78);
       color: #ffffff;
       padding: 0.2rem 0.55rem;
-      font-size: 0.68rem;
+      font-size: 0.66rem;
       letter-spacing: 0.06em;
       pointer-events: none;
     }
@@ -213,8 +343,8 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      width: 2rem;
-      height: 2rem;
+      width: 2.15rem;
+      height: 2.15rem;
       background: rgba(255, 255, 255, 0.92);
       border: 1px solid var(--border);
       color: var(--text);
@@ -222,14 +352,19 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      opacity: 0;
+      opacity: 0.9;
       transition: opacity 0.2s ease, background 0.2s ease;
       font-size: 0.9rem;
       user-select: none;
     }
 
-    .card-media:hover .nav-arrow {
-      opacity: 1;
+    @media (hover: hover) {
+      .nav-arrow {
+        opacity: 0;
+      }
+      .card-media:hover .nav-arrow {
+        opacity: 1;
+      }
     }
 
     .nav-arrow:hover {
@@ -238,22 +373,28 @@
     }
 
     .nav-arrow.prev {
-      left: 0.75rem;
+      left: 0.65rem;
     }
 
     .nav-arrow.next {
-      right: 0.75rem;
+      right: 0.65rem;
     }
 
     /* Variant Switcher Strip */
     .variant-strip {
       display: flex;
-      gap: 0.4rem;
-      padding: 0.65rem 1.25rem;
+      gap: 0.35rem;
+      padding: 0.6rem 1rem;
       border-bottom: 1px solid var(--border);
-      background: #fcfbf9;
+      background: var(--surface-subtle);
       overflow-x: auto;
       scrollbar-width: none;
+    }
+
+    @media (min-width: 768px) {
+      .variant-strip {
+        padding: 0.65rem 1.25rem;
+      }
     }
 
     .variant-strip::-webkit-scrollbar {
@@ -264,9 +405,10 @@
       background: transparent;
       border: 1px solid var(--border);
       color: var(--text-muted);
-      padding: 0.25rem 0.6rem;
+      padding: 0.3rem 0.62rem;
+      min-height: 30px;
       font-family: inherit;
-      font-size: 0.7rem;
+      font-size: 0.69rem;
       letter-spacing: 0.03em;
       white-space: nowrap;
       cursor: pointer;
@@ -286,15 +428,29 @@
 
     /* Card Content */
     .card-body {
-      padding: 1.4rem 1.5rem 1.6rem;
+      padding: 1.25rem 1.25rem 1.4rem;
       display: flex;
       flex-direction: column;
       flex: 1;
-      gap: 0.55rem;
+      gap: 0.45rem;
+    }
+
+    @media (min-width: 768px) {
+      .card-body {
+        padding: 1.4rem 1.5rem 1.6rem;
+        gap: 0.55rem;
+      }
+    }
+
+    .card-meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
     }
 
     .card-category {
-      font-size: 0.68rem;
+      font-size: 0.66rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--text-subtle);
@@ -302,7 +458,7 @@
 
     .card-title {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.55rem;
+      font-size: 1.5rem;
       font-weight: 500;
       line-height: 1.2;
       color: var(--text);
@@ -316,20 +472,21 @@
     }
 
     .card-desc {
-      font-size: 0.82rem;
+      font-size: 0.81rem;
       color: var(--text-muted);
-      margin-top: 0.35rem;
+      margin-top: 0.25rem;
       line-height: 1.55;
     }
 
     .card-footer {
       margin-top: auto;
-      padding-top: 1.1rem;
+      padding-top: 1rem;
       border-top: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-size: 0.73rem;
+      gap: 0.5rem;
+      font-size: 0.72rem;
       color: var(--text-subtle);
       letter-spacing: 0.03em;
     }
@@ -340,6 +497,7 @@
       border-bottom: 1px solid var(--border-hover);
       padding-bottom: 1px;
       transition: border-color 0.2s ease;
+      white-space: nowrap;
     }
 
     .download-link:hover {
@@ -350,12 +508,18 @@
     .lightbox {
       position: fixed;
       inset: 0;
-      background: rgba(24, 24, 22, 0.92);
+      background: rgba(24, 24, 22, 0.94);
       z-index: 1000;
       display: none;
       align-items: center;
       justify-content: center;
-      padding: 2rem;
+      padding: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .lightbox {
+        padding: 2rem;
+      }
     }
 
     .lightbox.open {
@@ -363,18 +527,18 @@
     }
 
     .lightbox-inner {
-      max-width: 880px;
+      max-width: 860px;
       width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1.25rem;
+      gap: 1rem;
       position: relative;
     }
 
     .lightbox-img-wrap {
       width: 100%;
-      max-height: 76vh;
+      max-height: 72vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -385,7 +549,7 @@
 
     .lightbox-img-wrap img {
       max-width: 100%;
-      max-height: 76vh;
+      max-height: 72vh;
       object-fit: contain;
       display: block;
     }
@@ -393,30 +557,46 @@
     .lightbox-caption {
       width: 100%;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      flex-direction: column;
+      gap: 0.75rem;
       color: #e8e5df;
       font-size: 0.85rem;
     }
 
+    @media (min-width: 560px) {
+      .lightbox-caption {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
     .lightbox-title {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       color: #ffffff;
     }
 
     .lightbox-close {
       position: fixed;
-      top: 1.5rem;
-      right: 1.75rem;
-      background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.25);
+      top: 1rem;
+      right: 1rem;
+      background: rgba(24, 24, 22, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.3);
       color: #ffffff;
-      padding: 0.45rem 0.9rem;
-      font-size: 0.75rem;
+      padding: 0.45rem 0.85rem;
+      font-size: 0.72rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       cursor: pointer;
+      z-index: 1010;
+    }
+
+    @media (min-width: 768px) {
+      .lightbox-close {
+        top: 1.5rem;
+        right: 1.75rem;
+      }
     }
 
     .lightbox-close:hover {
@@ -424,15 +604,21 @@
     }
 
     footer {
-      margin-top: 5rem;
+      margin-top: 4.5rem;
       padding-top: 2rem;
       border-top: 1px solid var(--border);
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 1rem;
-      font-size: 0.78rem;
+      flex-direction: column;
+      gap: 0.6rem;
+      font-size: 0.76rem;
       color: var(--text-subtle);
+    }
+
+    @media (min-width: 640px) {
+      footer {
+        flex-direction: row;
+        justify-content: space-between;
+      }
     }
   </style>
 </head>
@@ -441,27 +627,36 @@
     <header>
       <div>
         <div class="eyebrow">Etsy &amp; Printify Prototype Archive</div>
-        <h1>Minimalist Physics Mug Collection</h1>
+        <h1>Minimalist Physics Collection</h1>
       </div>
       <p class="header-meta">
-        Fine-line black ink illustrations on 11oz white ceramic mugs. Switch between studio and lifestyle placement mockups on each card or click any image to inspect full resolution.
+        Fine-line black and off-white ink illustrations across 11oz ceramic mugs and heavyweight cotton crew-neck t-shirts. Switch views on any card or tap an image to inspect full resolution.
       </p>
     </header>
 
     <div class="toolbar">
-      <div class="filter-group" id="filters">
-        <button class="filter-btn active" data-filter="all">All Designs (6)</button>
-        <button class="filter-btn" data-filter="quantum">Quantum &amp; Matter</button>
-        <button class="filter-btn" data-filter="mechanics">Classical &amp; Thermodynamics</button>
+      <div class="toolbar-controls">
+        <div class="filter-group" id="typeFilters" aria-label="Product Type Filter">
+          <button class="filter-btn active" data-type="all">All Lineup (12)</button>
+          <button class="filter-btn" data-type="mugs">Ceramic Mugs (6)</button>
+          <button class="filter-btn" data-type="tshirts">Apparel / T-Shirts (6)</button>
+          <button class="filter-btn" data-type="paired">Paired by Theme</button>
+        </div>
+        <div class="toolbar-divider"></div>
+        <div class="filter-group" id="topicFilters" aria-label="Physics Topic Filter">
+          <button class="filter-btn active" data-topic="all">All Topics</button>
+          <button class="filter-btn" data-topic="quantum">Quantum &amp; Matter</button>
+          <button class="filter-btn" data-topic="mechanics">Classical &amp; Thermodynamics</button>
+        </div>
       </div>
-      <div class="count-label" id="countLabel">Showing 6 of 6 mugs &middot; 25 mockups</div>
+      <div class="count-label" id="countLabel">Showing 12 items &middot; 49 mockups</div>
     </div>
 
-    <main class="grid" id="mugGrid"></main>
+    <main id="catalogContainer"></main>
 
     <footer>
-      <span>Custom Etsy Mug Mockup Creation &mdash; Fine-Line Physics Series</span>
-      <span>11oz White Ceramic &middot; Studio &amp; Lifestyle Placement Mockups</span>
+      <span>Custom Etsy Mug &amp; Apparel Mockup Collection &mdash; Fine-Line Physics Series</span>
+      <span>11oz White Ceramic Mugs &middot; Heavyweight Cotton Crew-Neck Tees</span>
     </footer>
   </div>
 
@@ -486,305 +681,403 @@
   </div>
 
   <script>
-    const MUGS = [
+    const THEMES = [
       {
-        id: 'schrodinger',
+        themeId: 'schrodinger',
+        folder: 'shrodingers',
         title: "Schrödinger’s Cat",
         punchline: "Wanted: Dead & Alive",
-        category: 'quantum',
-        categoryLabel: 'Quantum Mechanics',
-        baseSpec: '11oz White Ceramic',
-        description: "Original hand-drawn split-character illustration blending an alive feline half with a skeletal half inside an open box, framed by orbital sparks and wave motifs.",
-        images: [
-          {
-            src: './mugs/shrodingers/shrodinger_2.png',
-            label: 'Sunlit Desk'
-          },
-          {
-            src: './mugs/shrodingers/placement_1.png',
-            label: 'Workspace Desk'
-          },
-          {
-            src: './mugs/shrodingers/placement_2.png',
-            label: 'Bistro Cafe'
-          },
-          {
-            src: './mugs/shrodingers/placement_3.png',
-            label: 'Reading Corner'
-          },
-          {
-            src: './mugs/shrodingers/shrodinger.png',
-            label: 'Initial Split Mockup'
-          }
+        topic: 'quantum',
+        topicLabel: 'Quantum Mechanics',
+        mugDesc: "Original hand-drawn split-character illustration blending an alive feline half with a skeletal half inside an open box, framed by orbital sparks and wave motifs.",
+        tshirtDesc: "Centered chest screen-print of the split alive/skeletal Schrödinger's Cat paradox on relaxed heavyweight white, natural cream, and matte black cotton crew-necks.",
+        mugImages: [
+          { src: './mugs/shrodingers/shrodinger_2.png', label: 'Sunlit Desk' },
+          { src: './mugs/shrodingers/placement_1.png',  label: 'Workspace Desk' },
+          { src: './mugs/shrodingers/placement_2.png',  label: 'Bistro Cafe' },
+          { src: './mugs/shrodingers/placement_3.png',  label: 'Reading Corner' },
+          { src: './mugs/shrodingers/shrodinger.png',   label: 'Initial Split Mockup' }
+        ],
+        tshirtImages: [
+          { src: './tshirts/shrodingers/image.png',       label: 'Living Room (White Tee)' },
+          { src: './tshirts/shrodingers/placement_1.png', label: 'Coffee Shop (Black Tee)' },
+          { src: './tshirts/shrodingers/placement_2.png', label: 'Park Walk (Cream Tee)' },
+          { src: './tshirts/shrodingers/placement_3.png', label: 'Studio Lounge (Black Tee)' }
         ]
       },
       {
-        id: 'atoms',
+        themeId: 'atoms',
+        folder: 'atoms',
         title: "Don't Trust Atoms",
         punchline: "They Make Up Everything",
-        category: 'quantum',
-        categoryLabel: 'Atomic Physics',
-        baseSpec: '11oz White Ceramic',
-        description: "Delicate Bohr-inspired orbital rings, nucleus cluster, and sine wave harmonics rendered in crisp minimalist line art on sunlit ceramic.",
-        images: [
-          {
-            src: './mugs/atoms/image.png',
-            label: 'Sunlit Desk'
-          },
-          {
-            src: './mugs/atoms/placement_1.png',
-            label: 'Workspace Desk'
-          },
-          {
-            src: './mugs/atoms/placement_2.png',
-            label: 'Bistro Cafe'
-          },
-          {
-            src: './mugs/atoms/placement_3.png',
-            label: 'Reading Corner'
-          }
+        topic: 'quantum',
+        topicLabel: 'Atomic Physics',
+        mugDesc: "Delicate Bohr-inspired orbital rings, nucleus cluster, and sine wave harmonics rendered in crisp minimalist line art on sunlit ceramic.",
+        tshirtDesc: "Fine-line atomic orbital diagram and harmonic sine waves printed across crisp white, natural cream, and matte black unisex cotton t-shirts.",
+        mugImages: [
+          { src: './mugs/atoms/image.png',       label: 'Sunlit Desk' },
+          { src: './mugs/atoms/placement_1.png', label: 'Workspace Desk' },
+          { src: './mugs/atoms/placement_2.png', label: 'Bistro Cafe' },
+          { src: './mugs/atoms/placement_3.png', label: 'Reading Corner' }
+        ],
+        tshirtImages: [
+          { src: './tshirts/atoms/image.png',       label: 'Living Room (White Tee)' },
+          { src: './tshirts/atoms/placement_1.png', label: 'Coffee Shop (Black Tee)' },
+          { src: './tshirts/atoms/placement_2.png', label: 'Park Walk (Cream Tee)' },
+          { src: './tshirts/atoms/placement_3.png', label: 'Studio Lounge (Black Tee)' }
         ]
       },
       {
-        id: 'love',
+        themeId: 'love',
+        folder: 'love',
         title: "Watt Is Love",
         punchline: "Baby Don't Hertz Me",
-        category: 'quantum',
-        categoryLabel: 'Electromagnetism',
-        baseSpec: '11oz White Ceramic',
-        description: "Fine-line filament bulb with heart-shaped glowing wire, orbital electron paths, and frequency wave accents.",
-        images: [
-          {
-            src: './mugs/love/image.png',
-            label: 'Sunlit Desk'
-          },
-          {
-            src: './mugs/love/placement_1.png',
-            label: 'Workspace Desk'
-          },
-          {
-            src: './mugs/love/placement_2.png',
-            label: 'Bistro Cafe'
-          },
-          {
-            src: './mugs/love/placement_3.png',
-            label: 'Reading Corner'
-          }
+        topic: 'quantum',
+        topicLabel: 'Electromagnetism',
+        mugDesc: "Fine-line filament bulb with heart-shaped glowing wire, orbital electron paths, and frequency wave accents on 11oz ceramic.",
+        tshirtDesc: "Minimalist heart-filament lightbulb and electromagnetic frequency wave graphic screen-printed on casual white, cream, and black crew-neck tees.",
+        mugImages: [
+          { src: './mugs/love/image.png',       label: 'Sunlit Desk' },
+          { src: './mugs/love/placement_1.png', label: 'Workspace Desk' },
+          { src: './mugs/love/placement_2.png', label: 'Bistro Cafe' },
+          { src: './mugs/love/placement_3.png', label: 'Reading Corner' }
+        ],
+        tshirtImages: [
+          { src: './tshirts/love/image.png',       label: 'Living Room (White Tee)' },
+          { src: './tshirts/love/placement_1.png', label: 'Coffee Shop (Black Tee)' },
+          { src: './tshirts/love/placement_2.png', label: 'Park Walk (Cream Tee)' },
+          { src: './tshirts/love/placement_3.png', label: 'Studio Lounge (Black Tee)' }
         ]
       },
       {
-        id: 'energy',
+        themeId: 'energy',
+        folder: 'energy',
         title: "I Have Potential",
         punchline: "Energy",
-        category: 'mechanics',
-        categoryLabel: 'Classical Mechanics',
-        baseSpec: '11oz White Ceramic',
-        description: "A sphere poised at the crest of a steep incline overlaid with dashed trajectory curves, harmonic waves, and subtle celestial coordinates.",
-        images: [
-          {
-            src: './mugs/energy/image.png',
-            label: 'Sunlit Desk'
-          },
-          {
-            src: './mugs/energy/placement_1.png',
-            label: 'Workspace Desk'
-          },
-          {
-            src: './mugs/energy/placement_2.png',
-            label: 'Bistro Cafe'
-          },
-          {
-            src: './mugs/energy/placement_3.png',
-            label: 'Reading Corner'
-          }
+        topic: 'mechanics',
+        topicLabel: 'Classical Mechanics',
+        mugDesc: "A sphere poised at the crest of a steep incline overlaid with dashed trajectory curves, harmonic waves, and subtle celestial coordinates.",
+        tshirtDesc: "Architectural incline diagram with poised sphere and orbital trajectories printed in high-contrast fine lines on white, cream, and black cotton tees.",
+        mugImages: [
+          { src: './mugs/energy/image.png',       label: 'Sunlit Desk' },
+          { src: './mugs/energy/placement_1.png', label: 'Workspace Desk' },
+          { src: './mugs/energy/placement_2.png', label: 'Bistro Cafe' },
+          { src: './mugs/energy/placement_3.png', label: 'Reading Corner' }
+        ],
+        tshirtImages: [
+          { src: './tshirts/energy/image.png',       label: 'Living Room (White Tee)' },
+          { src: './tshirts/energy/placement_1.png', label: 'Coffee Shop (Black Tee)' },
+          { src: './tshirts/energy/placement_2.png', label: 'Park Walk (Cream Tee)' },
+          { src: './tshirts/energy/placement_3.png', label: 'Studio Lounge (Black Tee)' }
         ]
       },
       {
-        id: 'force',
+        themeId: 'force',
+        folder: 'force',
         title: "May The Force",
         punchline: "Be Mass Times Acceleration",
-        category: 'mechanics',
-        categoryLabel: 'Newtonian Mechanics',
-        baseSpec: '11oz White Ceramic',
-        description: "Newton's falling apple encircled by planetary orbits, gravitational field lines, and minimalist star accents.",
-        images: [
-          {
-            src: './mugs/force/image.png',
-            label: 'Sunlit Desk'
-          },
-          {
-            src: './mugs/force/placement_1.png',
-            label: 'Workspace Desk'
-          },
-          {
-            src: './mugs/force/placement_2.png',
-            label: 'Bistro Cafe'
-          },
-          {
-            src: './mugs/force/placement_3.png',
-            label: 'Reading Corner'
-          }
+        topic: 'mechanics',
+        topicLabel: 'Newtonian Mechanics',
+        mugDesc: "Newton's falling apple encircled by planetary orbits, gravitational field lines, and minimalist star accents on glossy white ceramic.",
+        tshirtDesc: "Newton's second law apple and orbital ring illustration on relaxed-fit white, cream, and matte black crew-neck t-shirts.",
+        mugImages: [
+          { src: './mugs/force/image.png',       label: 'Sunlit Desk' },
+          { src: './mugs/force/placement_1.png', label: 'Workspace Desk' },
+          { src: './mugs/force/placement_2.png', label: 'Bistro Cafe' },
+          { src: './mugs/force/placement_3.png', label: 'Reading Corner' }
+        ],
+        tshirtImages: [
+          { src: './tshirts/force/image.png',       label: 'Living Room (White Tee)' },
+          { src: './tshirts/force/placement_1.png', label: 'Coffee Shop (Black Tee)' },
+          { src: './tshirts/force/placement_2.png', label: 'Park Walk (Cream Tee)' },
+          { src: './tshirts/force/placement_3.png', label: 'Studio Lounge (Black Tee)' }
         ]
       },
       {
-        id: 'entropy',
+        themeId: 'entropy',
+        folder: 'entropy',
         title: "Entropy",
         punchline: "It Is Not What It Used To Be",
-        category: 'mechanics',
-        categoryLabel: 'Thermodynamics',
-        baseSpec: '11oz White Ceramic',
-        description: "Fine-line hourglass with flowing sand, intersecting wave functions, and dispersing orbital particles.",
-        images: [
-          {
-            src: './mugs/entropy/image.png',
-            label: 'Sunlit Desk'
-          },
-          {
-            src: './mugs/entropy/placement_1.png',
-            label: 'Workspace Desk'
-          },
-          {
-            src: './mugs/entropy/placement_2.png',
-            label: 'Bistro Cafe'
-          },
-          {
-            src: './mugs/entropy/placement_3.png',
-            label: 'Reading Corner'
-          }
+        topic: 'mechanics',
+        topicLabel: 'Thermodynamics',
+        mugDesc: "Fine-line hourglass with flowing sand, intersecting wave functions, and dispersing orbital particles on 11oz ceramic.",
+        tshirtDesc: "Thermodynamic hourglass and wave-interference illustration on soft heavyweight white, natural cream, and black cotton t-shirts.",
+        mugImages: [
+          { src: './mugs/entropy/image.png',       label: 'Sunlit Desk' },
+          { src: './mugs/entropy/placement_1.png', label: 'Workspace Desk' },
+          { src: './mugs/entropy/placement_2.png', label: 'Bistro Cafe' },
+          { src: './mugs/entropy/placement_3.png', label: 'Reading Corner' }
+        ],
+        tshirtImages: [
+          { src: './tshirts/entropy/image.png',       label: 'Living Room (White Tee)' },
+          { src: './tshirts/entropy/placement_1.png', label: 'Coffee Shop (Black Tee)' },
+          { src: './tshirts/entropy/placement_2.png', label: 'Park Walk (Cream Tee)' },
+          { src: './tshirts/entropy/placement_3.png', label: 'Studio Lounge (Black Tee)' }
         ]
       }
     ];
 
+    // Flatten into discrete product card items
+    const ITEMS = [];
+    THEMES.forEach(t => {
+      ITEMS.push({
+        cardId: `mug-${t.themeId}`,
+        themeId: t.themeId,
+        productType: 'mug',
+        productTypeLabel: '11oz Ceramic Mug',
+        baseSpec: '11oz White Ceramic',
+        title: t.title,
+        punchline: t.punchline,
+        topic: t.topic,
+        topicLabel: t.topicLabel,
+        description: t.mugDesc,
+        images: t.mugImages
+      });
+      ITEMS.push({
+        cardId: `tshirt-${t.themeId}`,
+        themeId: t.themeId,
+        productType: 'tshirt',
+        productTypeLabel: 'Unisex Crew-Neck Tee',
+        baseSpec: 'White · Cream · Black Cotton',
+        title: t.title,
+        punchline: t.punchline,
+        topic: t.topic,
+        topicLabel: t.topicLabel,
+        description: t.tshirtDesc,
+        images: t.tshirtImages
+      });
+    });
+
     const state = {
-      filter: 'all',
+      typeFilter: 'all',   // 'all' | 'mugs' | 'tshirts' | 'paired'
+      topicFilter: 'all',  // 'all' | 'quantum' | 'mechanics'
       activeImageIdx: {},
-      lightboxMugId: null
+      lightboxCardId: null
     };
 
-    MUGS.forEach(m => { state.activeImageIdx[m.id] = 0; });
+    ITEMS.forEach(item => { state.activeImageIdx[item.cardId] = 0; });
 
-    const gridEl = document.getElementById('mugGrid');
+    const catalogEl = document.getElementById('catalogContainer');
     const countLabelEl = document.getElementById('countLabel');
     const lightboxEl = document.getElementById('lightbox');
     const lightboxImgEl = document.getElementById('lightboxImg');
     const lightboxTitleEl = document.getElementById('lightboxTitle');
     const lightboxLabelEl = document.getElementById('lightboxLabel');
 
-    function getFilteredMugs() {
-      if (state.filter === 'all') return MUGS;
-      return MUGS.filter(m => m.category === state.filter);
+    function renderCardHTML(item) {
+      const idx = state.activeImageIdx[item.cardId] || 0;
+      const currentImg = item.images[idx];
+      const hasMultiple = item.images.length > 1;
+
+      return `
+        <article class="card" data-card-id="${item.cardId}">
+          <div class="card-media">
+            <img
+              src="${currentImg.src}"
+              alt="${item.title} (${item.productTypeLabel}) — ${currentImg.label}"
+              loading="lazy"
+              data-action="zoom"
+              data-card-id="${item.cardId}"
+            />
+            <span class="media-badge">${currentImg.label}</span>
+            <span class="media-type-tag">${item.productType === 'mug' ? 'Mug' : 'T-Shirt'}</span>
+            <span class="media-count">${idx + 1} / ${item.images.length}</span>
+            ${hasMultiple ? `
+              <button class="nav-arrow prev" data-action="prev" data-card-id="${item.cardId}" aria-label="Previous image">&larr;</button>
+              <button class="nav-arrow next" data-action="next" data-card-id="${item.cardId}" aria-label="Next image">&rarr;</button>
+            ` : ''}
+          </div>
+          <div class="variant-strip">
+            ${item.images.map((img, i) => `
+              <button
+                class="variant-pill ${i === idx ? 'active' : ''}"
+                data-action="select-img"
+                data-card-id="${item.cardId}"
+                data-idx="${i}"
+              >
+                ${img.label}
+              </button>
+            `).join('')}
+          </div>
+          <div class="card-body">
+            <div class="card-meta-row">
+              <span class="card-category">${item.topicLabel}</span>
+              <span class="card-category">${item.productTypeLabel}</span>
+            </div>
+            <h3 class="card-title">${item.title}</h3>
+            <div class="card-subtitle">“${item.punchline}”</div>
+            <p class="card-desc">${item.description}</p>
+            <div class="card-footer">
+              <span>${item.baseSpec}</span>
+              <a class="download-link" href="${currentImg.src}" download="${item.cardId}-${idx + 1}.png">Download Image</a>
+            </div>
+          </div>
+        </article>
+      `;
     }
 
-    function renderGrid() {
-      const list = getFilteredMugs();
-      const totalImgs = list.reduce((sum, m) => sum + m.images.length, 0);
-      countLabelEl.textContent = `Showing ${list.length} of ${MUGS.length} mugs · ${totalImgs} mockups`;
+    function renderCatalog() {
+      const topicMatch = item => state.topicFilter === 'all' || item.topic === state.topicFilter;
+      const mugs = ITEMS.filter(i => i.productType === 'mug' && topicMatch(i));
+      const tshirts = ITEMS.filter(i => i.productType === 'tshirt' && topicMatch(i));
 
-      gridEl.innerHTML = list.map(mug => {
-        const idx = state.activeImageIdx[mug.id] || 0;
-        const currentImg = mug.images[idx];
-        const hasMultiple = mug.images.length > 1;
+      let html = '';
+      let shownItems = 0;
+      let shownMockups = 0;
 
-        return `
-          <article class="card" data-mug-id="${mug.id}">
-            <div class="card-media">
-              <img
-                src="${currentImg.src}"
-                alt="${mug.title} — ${currentImg.label}"
-                data-action="zoom"
-                data-mug-id="${mug.id}"
-              />
-              <span class="media-badge">${currentImg.label}</span>
-              <span class="media-count">${idx + 1} / ${mug.images.length}</span>
-              ${hasMultiple ? `
-                <button class="nav-arrow prev" data-action="prev" data-mug-id="${mug.id}" aria-label="Previous image">&larr;</button>
-                <button class="nav-arrow next" data-action="next" data-mug-id="${mug.id}" aria-label="Next image">&rarr;</button>
-              ` : ''}
-            </div>
-            <div class="variant-strip">
-              ${mug.images.map((img, i) => `
-                <button
-                  class="variant-pill ${i === idx ? 'active' : ''}"
-                  data-action="select-img"
-                  data-mug-id="${mug.id}"
-                  data-idx="${i}"
-                >
-                  ${img.label}
-                </button>
-              `).join('')}
-            </div>
-            <div class="card-body">
-              <div class="card-category">${mug.categoryLabel}</div>
-              <h2 class="card-title">${mug.title}</h2>
-              <div class="card-subtitle">“${mug.punchline}”</div>
-              <p class="card-desc">${mug.description}</p>
-              <div class="card-footer">
-                <span>${mug.baseSpec}</span>
-                <a class="download-link" href="${currentImg.src}" download="${mug.id}-${idx + 1}.png">Download Image</a>
+      if (state.typeFilter === 'paired') {
+        const themes = THEMES.filter(t => state.topicFilter === 'all' || t.topic === state.topicFilter);
+        themes.forEach(t => {
+          const mugItem = ITEMS.find(i => i.cardId === `mug-${t.themeId}`);
+          const tshirtItem = ITEMS.find(i => i.cardId === `tshirt-${t.themeId}`);
+          shownItems += 2;
+          shownMockups += mugItem.images.length + tshirtItem.images.length;
+          html += `
+            <section class="section-block">
+              <div class="section-header">
+                <h2 class="section-title">${t.title} &mdash; <em>“${t.punchline}”</em></h2>
+                <span class="section-subtitle">${t.topicLabel} &middot; Matching Mug &amp; T-Shirt Set</span>
               </div>
-            </div>
-          </article>
-        `;
-      }).join('');
+              <div class="grid paired-grid">
+                ${renderCardHTML(mugItem)}
+                ${renderCardHTML(tshirtItem)}
+              </div>
+            </section>
+          `;
+        });
+      } else {
+        if (state.typeFilter === 'all' || state.typeFilter === 'mugs') {
+          shownItems += mugs.length;
+          shownMockups += mugs.reduce((s, i) => s + i.images.length, 0);
+          html += `
+            <section class="section-block">
+              <div class="section-header">
+                <h2 class="section-title">11oz Ceramic Mug Collection</h2>
+                <span class="section-subtitle">Studio &amp; Lifestyle Placement Mockups (${mugs.length} designs)</span>
+              </div>
+              <div class="grid">
+                ${mugs.map(renderCardHTML).join('')}
+              </div>
+            </section>
+          `;
+        }
+
+        if (state.typeFilter === 'all' || state.typeFilter === 'tshirts') {
+          shownItems += tshirts.length;
+          shownMockups += tshirts.reduce((s, i) => s + i.images.length, 0);
+          html += `
+            <section class="section-block">
+              <div class="section-header">
+                <h2 class="section-title">Heavyweight Cotton T-Shirt Collection</h2>
+                <span class="section-subtitle">Lifestyle Lookbook Across White, Cream &amp; Black Crew-Necks (${tshirts.length} designs)</span>
+              </div>
+              <div class="grid">
+                ${tshirts.map(renderCardHTML).join('')}
+              </div>
+            </section>
+          `;
+        }
+      }
+
+      countLabelEl.textContent = `Showing ${shownItems} items · ${shownMockups} mockups`;
+      catalogEl.innerHTML = html;
     }
 
-    function setMugImage(mugId, newIdx) {
-      const mug = MUGS.find(m => m.id === mugId);
-      if (!mug) return;
-      const len = mug.images.length;
-      state.activeImageIdx[mugId] = ((newIdx % len) + len) % len;
-      renderGrid();
-      if (state.lightboxMugId === mugId) {
+    function setCardImage(cardId, newIdx) {
+      const item = ITEMS.find(i => i.cardId === cardId);
+      if (!item) return;
+      const len = item.images.length;
+      state.activeImageIdx[cardId] = ((newIdx % len) + len) % len;
+      renderCatalog();
+      if (state.lightboxCardId === cardId) {
         updateLightbox();
       }
     }
 
-    function openLightbox(mugId) {
-      state.lightboxMugId = mugId;
+    function openLightbox(cardId) {
+      state.lightboxCardId = cardId;
       updateLightbox();
       lightboxEl.classList.add('open');
     }
 
     function closeLightbox() {
       lightboxEl.classList.remove('open');
-      state.lightboxMugId = null;
+      state.lightboxCardId = null;
     }
 
     function updateLightbox() {
-      const mug = MUGS.find(m => m.id === state.lightboxMugId);
-      if (!mug) return;
-      const idx = state.activeImageIdx[mug.id] || 0;
-      const img = mug.images[idx];
+      const item = ITEMS.find(i => i.cardId === state.lightboxCardId);
+      if (!item) return;
+      const idx = state.activeImageIdx[item.cardId] || 0;
+      const img = item.images[idx];
       lightboxImgEl.src = img.src;
-      lightboxImgEl.alt = `${mug.title} — ${img.label}`;
-      lightboxTitleEl.textContent = `${mug.title}: “${mug.punchline}”`;
-      lightboxLabelEl.textContent = `${img.label} (${idx + 1} of ${mug.images.length})`;
+      lightboxImgEl.alt = `${item.title} (${item.productTypeLabel}) — ${img.label}`;
+      lightboxTitleEl.textContent = `${item.title}: “${item.punchline}” (${item.productTypeLabel})`;
+      lightboxLabelEl.textContent = `${img.label} (${idx + 1} of ${item.images.length})`;
     }
 
-    gridEl.addEventListener('click', e => {
+    catalogEl.addEventListener('click', e => {
       const target = e.target.closest('[data-action]');
       if (!target) return;
       const action = target.dataset.action;
-      const mugId = target.dataset.mugId;
+      const cardId = target.dataset.cardId;
 
       if (action === 'select-img') {
-        setMugImage(mugId, parseInt(target.dataset.idx, 10));
+        setCardImage(cardId, parseInt(target.dataset.idx, 10));
       } else if (action === 'prev') {
-        setMugImage(mugId, (state.activeImageIdx[mugId] || 0) - 1);
+        setCardImage(cardId, (state.activeImageIdx[cardId] || 0) - 1);
       } else if (action === 'next') {
-        setMugImage(mugId, (state.activeImageIdx[mugId] || 0) + 1);
+        setCardImage(cardId, (state.activeImageIdx[cardId] || 0) + 1);
       } else if (action === 'zoom') {
-        openLightbox(mugId);
+        openLightbox(cardId);
       }
     });
 
-    document.getElementById('filters').addEventListener('click', e => {
+    // Touch swipe support on card image viewers
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchCardId = null;
+
+    catalogEl.addEventListener('touchstart', e => {
+      const media = e.target.closest('.card-media');
+      if (!media) return;
+      const card = media.closest('.card');
+      if (!card) return;
+      touchCardId = card.dataset.cardId;
+      touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+
+    catalogEl.addEventListener('touchend', e => {
+      if (!touchCardId) return;
+      const dx = e.changedTouches[0].screenX - touchStartX;
+      const dy = e.changedTouches[0].screenY - touchStartY;
+      if (Math.abs(dx) > 42 && Math.abs(dx) > Math.abs(dy) * 1.4) {
+        if (dx < 0) {
+          setCardImage(touchCardId, (state.activeImageIdx[touchCardId] || 0) + 1);
+        } else {
+          setCardImage(touchCardId, (state.activeImageIdx[touchCardId] || 0) - 1);
+        }
+      }
+      touchCardId = null;
+    }, { passive: true });
+
+    document.getElementById('typeFilters').addEventListener('click', e => {
       const btn = e.target.closest('.filter-btn');
       if (!btn) return;
-      document.querySelectorAll('#filters .filter-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('#typeFilters .filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      state.filter = btn.dataset.filter;
-      renderGrid();
+      state.typeFilter = btn.dataset.type;
+      renderCatalog();
+    });
+
+    document.getElementById('topicFilters').addEventListener('click', e => {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      document.querySelectorAll('#topicFilters .filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.topicFilter = btn.dataset.topic;
+      renderCatalog();
     });
 
     document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
@@ -793,25 +1086,25 @@
     });
 
     document.getElementById('lightboxPrev').addEventListener('click', () => {
-      if (state.lightboxMugId) {
-        setMugImage(state.lightboxMugId, (state.activeImageIdx[state.lightboxMugId] || 0) - 1);
+      if (state.lightboxCardId) {
+        setCardImage(state.lightboxCardId, (state.activeImageIdx[state.lightboxCardId] || 0) - 1);
       }
     });
 
     document.getElementById('lightboxNext').addEventListener('click', () => {
-      if (state.lightboxMugId) {
-        setMugImage(state.lightboxMugId, (state.activeImageIdx[state.lightboxMugId] || 0) + 1);
+      if (state.lightboxCardId) {
+        setCardImage(state.lightboxCardId, (state.activeImageIdx[state.lightboxCardId] || 0) + 1);
       }
     });
 
     window.addEventListener('keydown', e => {
-      if (!state.lightboxMugId) return;
+      if (!state.lightboxCardId) return;
       if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowLeft') setMugImage(state.lightboxMugId, (state.activeImageIdx[state.lightboxMugId] || 0) - 1);
-      if (e.key === 'ArrowRight') setMugImage(state.lightboxMugId, (state.activeImageIdx[state.lightboxMugId] || 0) + 1);
+      if (e.key === 'ArrowLeft') setCardImage(state.lightboxCardId, (state.activeImageIdx[state.lightboxCardId] || 0) - 1);
+      if (e.key === 'ArrowRight') setCardImage(state.lightboxCardId, (state.activeImageIdx[state.lightboxCardId] || 0) + 1);
     });
 
-    renderGrid();
+    renderCatalog();
   </script>
 </body>
 </html>
