@@ -1,0 +1,100 @@
+{
+  "chat_title": "Custom Etsy Mug Mockup Creation",
+  "source_url": "https://gemini.google.com/app/29986df0abc7edfd",
+  "store_description": "Welcome to our shop! This shop started quite simply: with a messy sketchbook, an over-caffeinated brain, and a deep love for the kind of quick-witted, nerdy humor that makes you snort-laugh into your morning brew. Every single design starts as a doodle or hand-inked sketch and is printed to order on cozy, durable shirts and sturdy ceramic mugs.",
+  "mugs": [
+    {
+      "id": "mug-schrodinger-01",
+      "folder": "mugs/shrodingers",
+      "title": "Schrödinger’s Cat",
+      "subtitle": "Wanted: Dead & Alive",
+      "category": "Quantum Mechanics",
+      "mockup_base": "11oz White Ceramic Mug",
+      "description": "For those mornings when you’re feeling a bit of both, this \"Schrödinger’s Cat\" mug features my original, hand-drawn illustration of physics’ most famous—and famously undecided—feline. I loved bringing this nerdy paradox to life with a detailed, split-character sketch that gently blends an adorable kitty with a skeletal side. It’s printed on a sturdy, cozy ceramic mug that is both microwave and dishwasher safe, ready to hold your favorite morning brew. A perfect, quirky gift for science geeks, cat lovers, or deep thinkers, it’s sure to add a little existential humor to any desk. Because each one is printed to order just for you, your mug gets made with plenty of care the moment you purchase.",
+      "images": [
+        { "file": "mugs/shrodingers/shrodinger_2.png", "label": "Final Mug Mockup", "type": "mockup" },
+        { "file": "mugs/shrodingers/shrodinger.png", "label": "Initial Split Mockup", "type": "mockup" },
+        { "file": "mugs/shrodingers/shordinger_print_2.png", "label": "Refined Print Artwork", "type": "print_ready" },
+        { "file": "mugs/shrodingers/Shrodinger_print.png", "label": "Stippled Print Artwork", "type": "print_ready" }
+      ]
+    },
+    {
+      "id": "mug-atoms-02",
+      "folder": "mugs/atoms",
+      "title": "Don't Trust Atoms",
+      "subtitle": "They Make Up Everything",
+      "category": "Atomic Physics",
+      "mockup_base": "11oz White Ceramic Mug",
+      "description": "Delicate Bohr-inspired orbital rings, nucleus cluster, and sine wave harmonics rendered in crisp minimalist line art on a white 11oz ceramic mug.",
+      "images": [
+        { "file": "mugs/atoms/image.png", "label": "Sunlit Desk Mockup", "type": "mockup" }
+      ]
+    },
+    {
+      "id": "mug-love-03",
+      "folder": "mugs/love",
+      "title": "Watt Is Love",
+      "subtitle": "Baby Don't Hertz Me",
+      "category": "Electromagnetism",
+      "mockup_base": "11oz White Ceramic Mug",
+      "description": "Fine-line filament bulb with heart-shaped glowing wire, orbital electron paths, and frequency wave accents.",
+      "images": [
+        { "file": "mugs/love/image.png", "label": "Sunlit Desk Mockup", "type": "mockup" }
+      ]
+    },
+    {
+      "id": "mug-energy-04",
+      "folder": "mugs/energy",
+      "title": "I Have Potential",
+      "subtitle": "Energy",
+      "category": "Classical Mechanics",
+      "mockup_base": "11oz White Ceramic Mug",
+      "description": "A sphere poised at the crest of a steep incline overlaid with dashed trajectory curves, harmonic waves, and subtle celestial coordinates.",
+      "images": [
+        { "file": "mugs/energy/image.png", "label": "Sunlit Desk Mockup", "type": "mockup" }
+      ]
+    },
+    {
+      "id": "mug-force-05",
+      "folder": "mugs/force",
+      "title": "May The Force",
+      "subtitle": "Be Mass Times Acceleration",
+      "category": "Newtonian Mechanics",
+      "mockup_base": "11oz White Ceramic Mug",
+      "description": "Newton's falling apple encircled by planetary orbits, gravitational field lines, and minimalist star accents.",
+      "images": [
+        { "file": "mugs/force/image.png", "label": "Sunlit Desk Mockup", "type": "mockup" }
+      ]
+    },
+    {
+      "id": "mug-entropy-06",
+      "folder": "mugs/entropy",
+      "title": "Entropy",
+      "subtitle": "It Is Not What It Used To Be",
+      "category": "Thermodynamics",
+      "mockup_base": "11oz White Ceramic Mug",
+      "description": "Fine-line hourglass with flowing sand, intersecting wave functions, and dispersing orbital particles.",
+      "images": [
+        { "file": "mugs/entropy/image.png", "label": "Sunlit Desk Mockup", "type": "mockup" }
+      ]
+    }
+  ],
+  "tshirt_concepts_from_chat": [
+    {
+      "id": "tshirt-espresso-01",
+      "title": "More Espresso, Less Depresso",
+      "chosen_style": "Modern Geometric (Delicate Fine Arch & Dots / White ink on Black Crewneck & Earth tones on Sand Crewneck)"
+    },
+    {
+      "id": "tshirt-wireless-01",
+      "title": "Born to be Wireless",
+      "chosen_style": "Miniature Block — 01 Centered Stack (Tiny WiFi symbol above widely-spaced uppercase BORN TO BE WIRELESS on Black Crewneck)",
+      "print_specs": {
+        "width": 3951,
+        "height": 4800,
+        "dpi": 300,
+        "transparent": true
+      }
+    }
+  ]
+}

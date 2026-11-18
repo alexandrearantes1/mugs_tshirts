@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Physics & Cat Pun Mugs — Product Mockup Collection</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #faf9f6;
+      --surface: #ffffff;
+      --text: #181816;
+      --text-muted: #6e6c66;
+      --text-subtle: #9c9991;
+      --border: #e8e5df;
+      --border-hover: #c9c4ba;
+      --accent: #181816;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding: 0 1.5rem 5rem;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      padding: 4.5rem 0 3.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 768px) {
+      header {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+    }
+
+    .eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+      font-weight: 400;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(2.25rem, 4vw, 3.25rem);
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+      color: var(--text);
+    }
+
+    .header-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      max-width: 380px;
+    }
+
+    /* Toolbar */
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.45rem 0.95rem;
+      font-family: inherit;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--border-hover);
+      color: var(--text);
+    }
+
+    .filter-btn.active {
+      background: var(--text);
+      border-color: var(--text);
+      color: var(--surface);
+    }
+
+    .count-label {
+      font-size: 0.78rem;
+      color: var(--text-subtle);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.25rem;
+    }
+
+    @media (min-width: 680px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1040px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Card */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.25s ease;
+    }
+
+    .card:hover {
+      border-color: var(--border-hover);
+    }
+
+    /* Image Viewer inside Card */
+    .card-media {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      background: #f4f2ed;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      cursor: zoom-in;
+      transition: opacity 0.25s ease, transform 0.5s ease;
+    }
+
+    .card-media img.contain-mode {
+      object-fit: contain;
+      padding: 1.5rem;
+      background: #ffffff;
+    }
+
+    .card-media:hover img {
+      transform: scale(1.015);
+    }
+
+    .media-badge {
+      position: absolute;
+      top: 0.85rem;
+      left: 0.85rem;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(4px);
+      border: 1px solid var(--border);
+      padding: 0.22rem 0.6rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .media-count {
+      position: absolute;
+      top: 0.85rem;
+      right: 0.85rem;
+      background: rgba(24, 24, 22, 0.78);
+      color: #ffffff;
+      padding: 0.2rem 0.55rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      pointer-events: none;
+    }
+
+    .nav-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2rem;
+      height: 2rem;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--border);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.2s ease, background 0.2s ease;
+      font-size: 0.9rem;
+      user-select: none;
+    }
+
+    .card-media:hover .nav-arrow {
+      opacity: 1;
+    }
+
+    .nav-arrow:hover {
+      background: #ffffff;
+      border-color: var(--text);
+    }
+
+    .nav-arrow.prev {
+      left: 0.75rem;
+    }
+
+    .nav-arrow.next {
+      right: 0.75rem;
+    }
+
+    /* Variant Switcher Strip */
+    .variant-strip {
+      display: flex;
+      gap: 0.4rem;
+      padding: 0.65rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      background: #fcfbf9;
+      overflow-x: auto;
+    }
+
+    .variant-pill {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.25rem 0.6rem;
+      font-family: inherit;
+      font-size: 0.7rem;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .variant-pill:hover {
+      border-color: var(--border-hover);
+      color: var(--text);
+    }
+
+    .variant-pill.active {
+      background: var(--text);
+      border-color: var(--text);
+      color: var(--surface);
+    }
+
+    /* Card Content */
+    .card-body {
+      padding: 1.4rem 1.5rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 0.55rem;
+    }
+
+    .card-category {
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-subtle);
+    }
+
+    .card-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.55rem;
+      font-weight: 500;
+      line-height: 1.2;
+      color: var(--text);
+    }
+
+    .card-subtitle {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-style: italic;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.05rem;
+    }
+
+    .card-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 0.35rem;
+      line-height: 1.55;
+    }
+
+    .card-footer {
+      margin-top: auto;
+      padding-top: 1.1rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.73rem;
+      color: var(--text-subtle);
+      letter-spacing: 0.03em;
+    }
+
+    .download-link {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border-hover);
+      padding-bottom: 1px;
+      transition: border-color 0.2s ease;
+    }
+
+    .download-link:hover {
+      border-color: var(--text);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(24, 24, 22, 0.92);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-inner {
+      max-width: 880px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      position: relative;
+    }
+
+    .lightbox-img-wrap {
+      width: 100%;
+      max-height: 76vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .lightbox-img-wrap img {
+      max-width: 100%;
+      max-height: 76vh;
+      object-fit: contain;
+      display: block;
+    }
+
+    .lightbox-caption {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #e8e5df;
+      font-size: 0.85rem;
+    }
+
+    .lightbox-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.35rem;
+      color: #ffffff;
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 1.5rem;
+      right: 1.75rem;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .lightbox-close:hover {
+      border-color: #ffffff;
+    }
+
+    footer {
+      margin-top: 5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.78rem;
+      color: var(--text-subtle);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <div class="eyebrow">Etsy &amp; Printify Prototype Archive</div>
+        <h1>Minimalist Physics Mug Collection</h1>
+      </div>
+      <p class="header-meta">
+        Fine-line black ink illustrations on 11oz white ceramic mugs. Click any image to inspect full resolution or switch between mockup and print-ready views.
+      </p>
+    </header>
+
+    <div class="toolbar">
+      <div class="filter-group" id="filters">
+        <button class="filter-btn active" data-filter="all">All Designs (6)</button>
+        <button class="filter-btn" data-filter="multi">Multi-Image Series</button>
+        <button class="filter-btn" data-filter="quantum">Quantum &amp; Matter</button>
+        <button class="filter-btn" data-filter="mechanics">Classical &amp; Thermodynamics</button>
+      </div>
+      <div class="count-label" id="countLabel">Showing 6 of 6 mugs &middot; 9 images</div>
+    </div>
+
+    <main class="grid" id="mugGrid"></main>
+
+    <footer>
+      <span>Custom Etsy Mug Mockup Creation &mdash; Fine-Line Physics Series</span>
+      <span>11oz White Ceramic &middot; Print-on-Demand Ready</span>
+    </footer>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <button class="lightbox-close" id="lightboxClose">Close &times;</button>
+    <div class="lightbox-inner">
+      <div class="lightbox-img-wrap">
+        <img id="lightboxImg" src="" alt="" />
+      </div>
+      <div class="lightbox-caption">
+        <div>
+          <div class="lightbox-title" id="lightboxTitle"></div>
+          <div id="lightboxLabel" style="font-size: 0.78rem; color: #b5b1a8;"></div>
+        </div>
+        <div style="display: flex; gap: 0.5rem;">
+          <button class="filter-btn" id="lightboxPrev" style="color: #fff; border-color: rgba(255,255,255,0.3);">&larr; Prev</button>
+          <button class="filter-btn" id="lightboxNext" style="color: #fff; border-color: rgba(255,255,255,0.3);">Next &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const MUGS = [
+      {
+        id: 'schrodinger',
+        title: "Schrödinger’s Cat",
+        punchline: "Wanted: Dead & Alive",
+        category: 'quantum',
+        categoryLabel: 'Quantum Mechanics',
+        baseSpec: '11oz White Ceramic',
+        description: "Original hand-drawn split-character illustration blending an alive feline half with a skeletal half inside an open box, framed by orbital sparks and wave motifs.",
+        images: [
+          {
+            src: './mugs/shrodingers/shrodinger_2.png',
+            label: 'Final Mug Mockup',
+            type: 'mockup'
+          },
+          {
+            src: './mugs/shrodingers/shrodinger.png',
+            label: 'Initial Split Mockup',
+            type: 'mockup'
+          },
+          {
+            src: './mugs/shrodingers/shordinger_print_2.png',
+            label: 'Refined Print Artwork',
+            type: 'print'
+          },
+          {
+            src: './mugs/shrodingers/Shrodinger_print.png',
+            label: 'Stippled Print Artwork',
+            type: 'print'
+          }
+        ]
+      },
+      {
+        id: 'atoms',
+        title: "Don't Trust Atoms",
+        punchline: "They Make Up Everything",
+        category: 'quantum',
+        categoryLabel: 'Atomic Physics',
+        baseSpec: '11oz White Ceramic',
+        description: "Delicate Bohr-inspired orbital rings, nucleus cluster, and sine wave harmonics rendered in crisp minimalist line art on sunlit ceramic.",
+        images: [
+          {
+            src: './mugs/atoms/image.png',
+            label: 'Sunlit Desk Mockup',
+            type: 'mockup'
+          }
+        ]
+      },
+      {
+        id: 'love',
+        title: "Watt Is Love",
+        punchline: "Baby Don't Hertz Me",
+        category: 'quantum',
+        categoryLabel: 'Electromagnetism',
+        baseSpec: '11oz White Ceramic',
+        description: "Fine-line filament bulb with heart-shaped glowing wire, orbital electron paths, and frequency wave accents.",
+        images: [
+          {
+            src: './mugs/love/image.png',
+            label: 'Sunlit Desk Mockup',
+            type: 'mockup'
+          }
+        ]
+      },
+      {
+        id: 'energy',
+        title: "I Have Potential",
+        punchline: "Energy",
+        category: 'mechanics',
+        categoryLabel: 'Classical Mechanics',
+        baseSpec: '11oz White Ceramic',
+        description: "A sphere poised at the crest of a steep incline overlaid with dashed trajectory curves, harmonic waves, and subtle celestial coordinates.",
+        images: [
+          {
+            src: './mugs/energy/image.png',
+            label: 'Sunlit Desk Mockup',
+            type: 'mockup'
+          }
+        ]
+      },
+      {
+        id: 'force',
+        title: "May The Force",
+        punchline: "Be Mass Times Acceleration",
+        category: 'mechanics',
+        categoryLabel: 'Newtonian Mechanics',
+        baseSpec: '11oz White Ceramic',
+        description: "Newton's falling apple encircled by planetary orbits, gravitational field lines, and minimalist star accents.",
+        images: [
+          {
+            src: './mugs/force/image.png',
+            label: 'Sunlit Desk Mockup',
+            type: 'mockup'
+          }
+        ]
+      },
+      {
+        id: 'entropy',
+        title: "Entropy",
+        punchline: "It Is Not What It Used To Be",
+        category: 'mechanics',
+        categoryLabel: 'Thermodynamics',
+        baseSpec: '11oz White Ceramic',
+        description: "Fine-line hourglass with flowing sand, intersecting wave functions, and dispersing orbital particles.",
+        images: [
+          {
+            src: './mugs/entropy/image.png',
+            label: 'Sunlit Desk Mockup',
+            type: 'mockup'
+          }
+        ]
+      }
+    ];
+
+    const state = {
+      filter: 'all',
+      activeImageIdx: {},
+      lightboxMugId: null
+    };
+
+    MUGS.forEach(m => { state.activeImageIdx[m.id] = 0; });
+
+    const gridEl = document.getElementById('mugGrid');
+    const countLabelEl = document.getElementById('countLabel');
+    const lightboxEl = document.getElementById('lightbox');
+    const lightboxImgEl = document.getElementById('lightboxImg');
+    const lightboxTitleEl = document.getElementById('lightboxTitle');
+    const lightboxLabelEl = document.getElementById('lightboxLabel');
+
+    function getFilteredMugs() {
+      if (state.filter === 'all') return MUGS;
+      if (state.filter === 'multi') return MUGS.filter(m => m.images.length > 1);
+      return MUGS.filter(m => m.category === state.filter);
+    }
+
+    function renderGrid() {
+      const list = getFilteredMugs();
+      const totalImgs = list.reduce((sum, m) => sum + m.images.length, 0);
+      countLabelEl.textContent = `Showing ${list.length} of ${MUGS.length} mugs · ${totalImgs} image${totalImgs === 1 ? '' : 's'}`;
+
+      gridEl.innerHTML = list.map(mug => {
+        const idx = state.activeImageIdx[mug.id] || 0;
+        const currentImg = mug.images[idx];
+        const hasMultiple = mug.images.length > 1;
+
+        return `
+          <article class="card" data-mug-id="${mug.id}">
+            <div class="card-media">
+              <img
+                src="${currentImg.src}"
+                alt="${mug.title} — ${currentImg.label}"
+                class="${currentImg.type === 'print' ? 'contain-mode' : ''}"
+                data-action="zoom"
+                data-mug-id="${mug.id}"
+              />
+              <span class="media-badge">${currentImg.label}</span>
+              <span class="media-count">${idx + 1} / ${mug.images.length}</span>
+              ${hasMultiple ? `
+                <button class="nav-arrow prev" data-action="prev" data-mug-id="${mug.id}" aria-label="Previous image">&larr;</button>
+                <button class="nav-arrow next" data-action="next" data-mug-id="${mug.id}" aria-label="Next image">&rarr;</button>
+              ` : ''}
+            </div>
+            <div class="variant-strip">
+              ${mug.images.map((img, i) => `
+                <button
+                  class="variant-pill ${i === idx ? 'active' : ''}"
+                  data-action="select-img"
+                  data-mug-id="${mug.id}"
+                  data-idx="${i}"
+                >
+                  ${img.label}
+                </button>
+              `).join('')}
+            </div>
+            <div class="card-body">
+              <div class="card-category">${mug.categoryLabel}</div>
+              <h2 class="card-title">${mug.title}</h2>
+              <div class="card-subtitle">“${mug.punchline}”</div>
+              <p class="card-desc">${mug.description}</p>
+              <div class="card-footer">
+                <span>${mug.baseSpec}</span>
+                <a class="download-link" href="${currentImg.src}" download="${mug.id}-${idx + 1}.png">Download Image</a>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function setMugImage(mugId, newIdx) {
+      const mug = MUGS.find(m => m.id === mugId);
+      if (!mug) return;
+      const len = mug.images.length;
+      state.activeImageIdx[mugId] = ((newIdx % len) + len) % len;
+      renderGrid();
+      if (state.lightboxMugId === mugId) {
+        updateLightbox();
+      }
+    }
+
+    function openLightbox(mugId) {
+      state.lightboxMugId = mugId;
+      updateLightbox();
+      lightboxEl.classList.add('open');
+    }
+
+    function closeLightbox() {
+      lightboxEl.classList.remove('open');
+      state.lightboxMugId = null;
+    }
+
+    function updateLightbox() {
+      const mug = MUGS.find(m => m.id === state.lightboxMugId);
+      if (!mug) return;
+      const idx = state.activeImageIdx[mug.id] || 0;
+      const img = mug.images[idx];
+      lightboxImgEl.src = img.src;
+      lightboxImgEl.alt = `${mug.title} — ${img.label}`;
+      lightboxTitleEl.textContent = `${mug.title}: “${mug.punchline}”`;
+      lightboxLabelEl.textContent = `${img.label} (${idx + 1} of ${mug.images.length})`;
+    }
+
+    gridEl.addEventListener('click', e => {
+      const target = e.target.closest('[data-action]');
+      if (!target) return;
+      const action = target.dataset.action;
+      const mugId = target.dataset.mugId;
+
+      if (action === 'select-img') {
+        setMugImage(mugId, parseInt(target.dataset.idx, 10));
+      } else if (action === 'prev') {
+        setMugImage(mugId, (state.activeImageIdx[mugId] || 0) - 1);
+      } else if (action === 'next') {
+        setMugImage(mugId, (state.activeImageIdx[mugId] || 0) + 1);
+      } else if (action === 'zoom') {
+        openLightbox(mugId);
+      }
+    });
+
+    document.getElementById('filters').addEventListener('click', e => {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      document.querySelectorAll('#filters .filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.filter = btn.dataset.filter;
+      renderGrid();
+    });
+
+    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+    lightboxEl.addEventListener('click', e => {
+      if (e.target === lightboxEl) closeLightbox();
+    });
+
+    document.getElementById('lightboxPrev').addEventListener('click', () => {
+      if (state.lightboxMugId) {
+        setMugImage(state.lightboxMugId, (state.activeImageIdx[state.lightboxMugId] || 0) - 1);
+      }
+    });
+
+    document.getElementById('lightboxNext').addEventListener('click', () => {
+      if (state.lightboxMugId) {
+        setMugImage(state.lightboxMugId, (state.activeImageIdx[state.lightboxMugId] || 0) + 1);
+      }
+    });
+
+    window.addEventListener('keydown', e => {
+      if (!state.lightboxMugId) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') setMugImage(state.lightboxMugId, (state.activeImageIdx[state.lightboxMugId] || 0) - 1);
+      if (e.key === 'ArrowRight') setMugImage(state.lightboxMugId, (state.activeImageIdx[state.lightboxMugId] || 0) + 1);
+    });
+
+    renderGrid();
+  </script>
+</body>
+</html>
