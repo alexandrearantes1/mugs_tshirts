@@ -178,10 +178,96 @@
       "category": "Thermodynamics",
       "mockup_base": "Unisex Heavyweight Cotton Crew-Neck Tee (White, Cream, Black)",
       "images": [
-        { "file": "tshirts/entropy/image.png", "label": "Living Room (White Tee)", "type": "mockup" },
-        { "file": "tshirts/entropy/placement_1.png", "label": "Coffee Shop (Black Tee)", "type": "mockup" },
-        { "file": "tshirts/entropy/placement_2.png", "label": "Park Walk (Cream Tee)", "type": "mockup" },
-        { "file": "tshirts/entropy/placement_3.png", "label": "Studio Lounge (Black Tee)", "type": "mockup" }
+        { "file": "tshirts/entropy/image.png", "label": "Window Bench (Cream Tee)", "type": "mockup" },
+        { "file": "tshirts/entropy/placement_1.png", "label": "Roastery (Black Tee)", "type": "mockup" },
+        { "file": "tshirts/entropy/placement_2.png", "label": "Garden Patio (White Tee)", "type": "mockup" },
+        { "file": "tshirts/entropy/placement_3.png", "label": "Coworking (Black Tee)", "type": "mockup" }
+      ]
+    }
+  ],
+  "hoodies": [
+    {
+      "id": "hoodie-schrodinger-01",
+      "folder": "hoodies/shrodingers",
+      "title": "Schrödinger’s Cat",
+      "subtitle": "Wanted: Dead & Alive",
+      "category": "Quantum Mechanics",
+      "mockup_base": "Unisex Heavyweight Fleece Pullover Hoodie (White, Cream, Black)",
+      "images": [
+        { "file": "hoodies/shrodingers/image.png", "label": "Living Room (White Hoodie)", "type": "mockup" },
+        { "file": "hoodies/shrodingers/placement_1.png", "label": "Gallery Loft (Black Hoodie)", "type": "mockup" },
+        { "file": "hoodies/shrodingers/placement_2.png", "label": "Rooftop (Cream Hoodie)", "type": "mockup" },
+        { "file": "hoodies/shrodingers/placement_3.png", "label": "Kitchen (Black Hoodie)", "type": "mockup" }
+      ]
+    },
+    {
+      "id": "hoodie-atoms-02",
+      "folder": "hoodies/atoms",
+      "title": "Don't Trust Atoms",
+      "subtitle": "They Make Up Everything",
+      "category": "Atomic Physics",
+      "mockup_base": "Unisex Heavyweight Fleece Pullover Hoodie (White, Cream, Black)",
+      "images": [
+        { "file": "hoodies/atoms/image.png", "label": "Garden Patio (White Hoodie)", "type": "mockup" },
+        { "file": "hoodies/atoms/placement_1.png", "label": "Window Cafe (Black Hoodie)", "type": "mockup" },
+        { "file": "hoodies/atoms/placement_2.png", "label": "Window Bench (Cream Hoodie)", "type": "mockup" },
+        { "file": "hoodies/atoms/placement_3.png", "label": "Courtyard (Black Hoodie)", "type": "mockup" }
+      ]
+    },
+    {
+      "id": "hoodie-love-03",
+      "folder": "hoodies/love",
+      "title": "Watt Is Love",
+      "subtitle": "Baby Don't Hertz Me",
+      "category": "Electromagnetism",
+      "mockup_base": "Unisex Heavyweight Fleece Pullover Hoodie (White, Cream, Black)",
+      "images": [
+        { "file": "hoodies/love/image.png", "label": "Record Store (White Hoodie)", "type": "mockup" },
+        { "file": "hoodies/love/placement_1.png", "label": "Coworking (Black Hoodie)", "type": "mockup" },
+        { "file": "hoodies/love/placement_2.png", "label": "Park Walk (Cream Hoodie)", "type": "mockup" },
+        { "file": "hoodies/love/placement_3.png", "label": "Roastery (Black Hoodie)", "type": "mockup" }
+      ]
+    },
+    {
+      "id": "hoodie-energy-04",
+      "folder": "hoodies/energy",
+      "title": "I Have Potential",
+      "subtitle": "Energy",
+      "category": "Classical Mechanics",
+      "mockup_base": "Unisex Heavyweight Fleece Pullover Hoodie (White, Cream, Black)",
+      "images": [
+        { "file": "hoodies/energy/image.png", "label": "Conservatory (White Hoodie)", "type": "mockup" },
+        { "file": "hoodies/energy/placement_1.png", "label": "Studio Lounge (Black Hoodie)", "type": "mockup" },
+        { "file": "hoodies/energy/placement_2.png", "label": "Veranda (Cream Hoodie)", "type": "mockup" },
+        { "file": "hoodies/energy/placement_3.png", "label": "Gallery Loft (Black Hoodie)", "type": "mockup" }
+      ]
+    },
+    {
+      "id": "hoodie-force-05",
+      "folder": "hoodies/force",
+      "title": "May The Force",
+      "subtitle": "Be Mass Times Acceleration",
+      "category": "Newtonian Mechanics",
+      "mockup_base": "Unisex Heavyweight Fleece Pullover Hoodie (White, Cream, Black)",
+      "images": [
+        { "file": "hoodies/force/image.png", "label": "Design Studio (White Hoodie)", "type": "mockup" },
+        { "file": "hoodies/force/placement_1.png", "label": "Kitchen (Black Hoodie)", "type": "mockup" },
+        { "file": "hoodies/force/placement_2.png", "label": "Rooftop (Cream Hoodie)", "type": "mockup" },
+        { "file": "hoodies/force/placement_3.png", "label": "Courtyard (Black Hoodie)", "type": "mockup" }
+      ]
+    },
+    {
+      "id": "hoodie-entropy-06",
+      "folder": "hoodies/entropy",
+      "title": "Entropy",
+      "subtitle": "It Is Not What It Used To Be",
+      "category": "Thermodynamics",
+      "mockup_base": "Unisex Heavyweight Fleece Pullover Hoodie (White, Cream, Black)",
+      "images": [
+        { "file": "hoodies/entropy/image.png", "label": "Window Bench (Cream Hoodie)", "type": "mockup" },
+        { "file": "hoodies/entropy/placement_1.png", "label": "Roastery (Black Hoodie)", "type": "mockup" },
+        { "file": "hoodies/entropy/placement_2.png", "label": "Garden Patio (White Hoodie)", "type": "mockup" },
+        { "file": "hoodies/entropy/placement_3.png", "label": "Coworking (Black Hoodie)", "type": "mockup" }
       ]
     }
   ]
