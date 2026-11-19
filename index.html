@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GEEKYARD — Minimalist Fine-Line Mugs &amp; Apparel</title>
+  <link rel="icon" type="image/svg+xml" href="./branding/geekyard_logo.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -18,6 +19,7 @@
       --border: #e8e5df;
       --border-hover: #c9c4ba;
       --accent: #181816;
+      --brand-red: #d92323;
     }
 
     * {
@@ -82,14 +84,124 @@
       color: var(--text-muted);
       margin-bottom: 0.35rem;
       font-weight: 400;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .brand-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--brand-red);
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 1.15rem;
+    }
+
+    .brand-mark {
+      height: 46px;
+      width: auto;
+      display: block;
+      background: transparent;
+      flex-shrink: 0;
+    }
+
+    @media (min-width: 720px) {
+      .brand-mark {
+        height: 54px;
+      }
+    }
+
+    .brand-divider {
+      width: 1px;
+      height: 2.6rem;
+      background: var(--border);
+      flex-shrink: 0;
+    }
+
+    .brand-asset-bar {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1.15rem 1.25rem;
+      margin-bottom: 1.35rem;
+      border: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    @media (min-width: 760px) {
+      .brand-asset-bar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .brand-swatches {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-swatch {
+      width: 84px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      padding: 0.55rem 0.75rem;
+    }
+
+    .brand-swatch.light {
+      background: transparent;
+    }
+
+    .brand-swatch.dark {
+      background: #141413;
+      border-color: #141413;
+    }
+
+    .brand-swatch img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-downloads {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .brand-dl-pill {
+      font-size: 0.68rem;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      padding: 0.32rem 0.65rem;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .brand-dl-pill:hover {
+      border-color: var(--text);
     }
 
     h1 {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: clamp(1.85rem, 3.6vw, 2.75rem);
       font-weight: 400;
-      letter-spacing: -0.01em;
-      line-height: 1.1;
+      letter-spacing: 0.06em;
+      line-height: 1.05;
       color: var(--text);
     }
 
@@ -603,14 +715,15 @@
 <body>
   <div class="container">
     <header>
-      <div style="display: flex; align-items: center; gap: 1rem;">
+      <div class="brand-lockup">
         <img
-          src="./branding/geekyard_design1_atomic_botanical_cream.png"
-          alt="Geekyard Logo"
-          style="width: 64px; height: 64px; object-fit: contain; border: 1px solid var(--border); background: var(--surface);"
+          src="./branding/geekyard_logo.svg"
+          alt="Geekyard Brand Mark"
+          class="brand-mark"
         />
+        <div class="brand-divider"></div>
         <div>
-          <div class="eyebrow">Geekyard &middot; Etsy &amp; Printify Collection</div>
+          <div class="eyebrow"><span class="brand-dot"></span>Etsy &amp; Printify Collection</div>
           <h1>GEEKYARD</h1>
         </div>
       </div>
@@ -627,7 +740,7 @@
           <button class="filter-btn" data-type="tshirts">T-Shirts (6)</button>
           <button class="filter-btn" data-type="hoodies">Hoodies (6)</button>
           <button class="filter-btn" data-type="paired">Grouped by Theme</button>
-          <button class="filter-btn" data-type="branding">Shop Logos (3)</button>
+          <button class="filter-btn" data-type="branding">Brand &amp; Signature (3)</button>
         </div>
         <div class="toolbar-divider"></div>
         <div class="filter-group" id="topicFilters" aria-label="Physics Topic Filter">
@@ -642,7 +755,10 @@
     <main id="catalogContainer"></main>
 
     <footer>
-      <span>Custom Etsy Mug &amp; Apparel Mockup Collection &mdash; Fine-Line Physics Series</span>
+      <span style="display: inline-flex; align-items: center; gap: 0.6rem;">
+        <img src="./branding/geekyard_logo.svg" alt="Geekyard" style="height: 16px; width: auto; opacity: 0.85;" />
+        GEEKYARD &mdash; Fine-Line Minimalist Collection
+      </span>
       <span>11oz White Ceramic Mugs &middot; Heavyweight Cotton Crew-Neck Tees &middot; Pullover Hoodies</span>
     </footer>
   </div>
@@ -890,62 +1006,53 @@
     });
 
     ITEMS.push({
-      cardId: 'logo-atomic-botanical',
+      cardId: 'signature-mug',
       themeId: 'branding-1',
       productType: 'branding',
-      productTypeLabel: 'Shop Logo · Design 1',
-      baseSpec: 'Transparent PNG · 1200×1200',
-      title: 'Geekyard — Atomic Botanical Nucleus',
-      punchline: 'Stippled Nucleus · Botanical Sprout · Sine Harmonics',
+      productTypeLabel: 'Signature Edition · Mug',
+      baseSpec: 'Charcoal + Crimson Signature · 11oz Ceramic',
+      title: 'Signature Ceramic Mug',
+      punchline: "Don't Trust Atoms — Hallmarked Edition",
       topic: 'quantum',
-      topicLabel: 'Brand Identity (With Text)',
-      description: 'Matched to the "Don\'t Trust Atoms" mug drawing style: a stippled central nucleus cluster sprouting a delicate two-leaf botanical stem ("Geek + Yard"), encircled by 4 hair-thin Bohr orbits, dotted trajectory arrow, horizontal sine waves, and thin Optima-style GEEKYARD capitals.',
+      topicLabel: 'Brand Signature Placement',
+      description: 'Subtle Lacoste-scale Geekyard emblem placed centered beneath the lower typography like a fine porcelain studio hallmark, pairing deep charcoal blades with the signature crimson focal dot.',
       images: [
-        { src: './branding/geekyard_design1_atomic_botanical_cream.png', label: 'Warm Cream' },
-        { src: './branding/geekyard_design1_atomic_botanical_black.png', label: 'Matte Black' },
-        { src: './branding/geekyard_design1_atomic_botanical_white.png', label: 'Pure White' },
-        { src: './branding/geekyard_design1_atomic_botanical_transparent_dark.png', label: 'Transparent (Dark Ink)' },
-        { src: './branding/geekyard_design1_atomic_botanical_transparent_light.png', label: 'Transparent (Light Ink)' }
+        { src: './branding/mockup_signature_mug.png', label: 'Ceramic Signature' },
+        { src: './branding/geekyard_logo_transparent_dark.png', label: 'Transparent Mark (Dark)' }
       ]
     });
 
     ITEMS.push({
-      cardId: 'logo-celestial-nib',
+      cardId: 'signature-tshirt',
       themeId: 'branding-2',
       productType: 'branding',
-      productTypeLabel: 'Shop Logo · Design 2 (No Text)',
-      baseSpec: 'Transparent PNG · 1200×1200',
-      title: 'Geekyard — Celestial Sketch Nib Emblem',
-      punchline: 'Text-Free Fineliner Icon · Stippled Globe · Orbital Waves',
+      productTypeLabel: 'Signature Edition · T-Shirt',
+      baseSpec: 'Charcoal + Crimson Signature · Heavyweight Cotton',
+      title: 'Signature Cotton T-Shirt',
+      punchline: "Don't Trust Atoms — Hallmarked Edition",
       topic: 'quantum',
-      topicLabel: 'Brand Identity (Icon Only)',
-      description: 'Pure text-free emblem in the exact 0.25mm technical pen style of the Atoms design: a finely stippled celestial sphere and fountain-pen nib encircled by hair-thin orbital rings, dotted trajectory arrow, intertwined horizontal sine waves, and miniature atom rosettes.',
+      topicLabel: 'Brand Signature Placement',
+      description: 'Understated Lacoste-sized Geekyard brand signature integrated cleanly beneath the chest illustration on crisp white cotton—effortlessly readable without competing with the fine-line artwork.',
       images: [
-        { src: './branding/geekyard_design2_celestial_nib_notext_cream.png', label: 'Warm Cream' },
-        { src: './branding/geekyard_design2_celestial_nib_notext_black.png', label: 'Matte Black' },
-        { src: './branding/geekyard_design2_celestial_nib_notext_white.png', label: 'Pure White' },
-        { src: './branding/geekyard_design2_celestial_nib_notext_transparent_dark.png', label: 'Transparent (Dark Ink)' },
-        { src: './branding/geekyard_design2_celestial_nib_notext_transparent_light.png', label: 'Transparent (Light Ink)' }
+        { src: './branding/mockup_signature_tshirt.png', label: 'White Tee Signature' },
+        { src: './branding/geekyard_logo_cream.png', label: 'Brand Icon (Cream)' }
       ]
     });
 
     ITEMS.push({
-      cardId: 'logo-terrarium-bulb',
+      cardId: 'signature-hoodie',
       themeId: 'branding-3',
       productType: 'branding',
-      productTypeLabel: 'Shop Logo · Design 3',
-      baseSpec: 'Transparent PNG · 1200×1200',
-      title: 'Geekyard — Filament Terrarium & Orbits',
-      punchline: 'Idea Bulb · Botanical Sprig · Atomic Harmonics',
-      topic: 'mechanics',
-      topicLabel: 'Brand Identity (With Text)',
-      description: 'Fine-line scientific diagram of a vintage glass filament bulb enclosing a stippled atomic rosette and botanical sprig, framed by hair-thin orbital ellipses, dotted trajectory arrow, braided horizontal sine waves, and thin Optima-style GEEKYARD typography.',
+      productTypeLabel: 'Signature Edition · Hoodie',
+      baseSpec: 'Off-White + Crimson Signature · Heavyweight Fleece',
+      title: 'Signature Pullover Hoodie',
+      punchline: "Schrödinger's Cat — Hallmarked Edition",
+      topic: 'quantum',
+      topicLabel: 'Brand Signature Placement',
+      description: 'Inverted off-white aerodynamic blades paired with the signature vermilion-crimson dot centered between the chest graphic and kangaroo pocket seam on matte black fleece.',
       images: [
-        { src: './branding/geekyard_design3_terrarium_bulb_cream.png', label: 'Warm Cream' },
-        { src: './branding/geekyard_design3_terrarium_bulb_black.png', label: 'Matte Black' },
-        { src: './branding/geekyard_design3_terrarium_bulb_white.png', label: 'Pure White' },
-        { src: './branding/geekyard_design3_terrarium_bulb_transparent_dark.png', label: 'Transparent (Dark Ink)' },
-        { src: './branding/geekyard_design3_terrarium_bulb_transparent_light.png', label: 'Transparent (Light Ink)' }
+        { src: './branding/mockup_signature_hoodie.png', label: 'Black Hoodie Signature' },
+        { src: './branding/geekyard_logo_black.png', label: 'Brand Icon (Black)' }
       ]
     });
 
@@ -1150,8 +1257,29 @@
           html += `
             <section class="section-block">
               <div class="section-header">
-                <h2 class="section-title">Geekyard Brand Identity &amp; Print-Ready Logos</h2>
-                <span class="section-subtitle">Single-Color Vector &amp; High-Res Lockups for Mugs, Neck Labels, Packaging &amp; Etsy Icon</span>
+                <h2 class="section-title">Geekyard Brand Mark &amp; Signature Mockups</h2>
+                <span class="section-subtitle">Transparent Vector Suite &amp; Lacoste-Scale Product Signature Placements</span>
+              </div>
+              <div class="brand-asset-bar">
+                <div class="brand-swatches">
+                  <div class="brand-swatch light" title="Transparent Dark Mark on Editorial Cream">
+                    <img src="./branding/geekyard_logo.svg" alt="Geekyard Transparent Mark (Light BG)" />
+                  </div>
+                  <div class="brand-swatch dark" title="Transparent Light Mark on Matte Black">
+                    <img src="./branding/geekyard_logo_light.svg" alt="Geekyard Transparent Mark (Dark BG)" />
+                  </div>
+                  <div>
+                    <div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.15rem; color: var(--text);">Official GEEKYARD Brand Mark</div>
+                    <div style="font-size: 0.72rem; color: var(--text-muted);">Transparent vector SVGs &amp; 1200&times;1200 print-ready PNGs</div>
+                  </div>
+                </div>
+                <div class="brand-downloads">
+                  <a class="brand-dl-pill" href="./branding/geekyard_logo.svg" download="geekyard-logo-transparent.svg">SVG (Transparent)</a>
+                  <a class="brand-dl-pill" href="./branding/geekyard_logo_light.svg" download="geekyard-logo-darkbg.svg">SVG (For Dark BG)</a>
+                  <a class="brand-dl-pill" href="./branding/geekyard_logo_transparent_dark.png" download="geekyard-logo-transparent-dark.png">PNG Transparent (Dark)</a>
+                  <a class="brand-dl-pill" href="./branding/geekyard_logo_transparent_light.png" download="geekyard-logo-transparent-light.png">PNG Transparent (Light)</a>
+                  <a class="brand-dl-pill" href="./branding/geekyard_logo_mono_dark.png" download="geekyard-logo-1color-stamp.png">1-Color Stamp PNG</a>
+                </div>
               </div>
               <div class="grid">
                 ${logos.map(renderCardHTML).join('')}
