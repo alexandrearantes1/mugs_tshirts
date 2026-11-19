@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Minimalist Physics Collection — Mugs &amp; Apparel</title>
+  <title>GEEKYARD — Minimalist Fine-Line Mugs &amp; Apparel</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -603,9 +603,16 @@
 <body>
   <div class="container">
     <header>
-      <div>
-        <div class="eyebrow">Etsy &amp; Printify Prototype Archive</div>
-        <h1>Minimalist Physics Collection</h1>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <img
+          src="./branding/geekyard_concept1_orbital_crest_cream.png"
+          alt="Geekyard Logo"
+          style="width: 64px; height: 64px; object-fit: contain; border: 1px solid var(--border); background: var(--surface);"
+        />
+        <div>
+          <div class="eyebrow">Geekyard &middot; Etsy &amp; Printify Collection</div>
+          <h1>GEEKYARD</h1>
+        </div>
       </div>
       <p class="header-meta">
         Fine-line black and off-white ink illustrations across 11oz ceramic mugs, heavyweight cotton crew-neck t-shirts, and fleece pullover hoodies. Switch views on any card or click an image to inspect full resolution.
@@ -620,6 +627,7 @@
           <button class="filter-btn" data-type="tshirts">T-Shirts (6)</button>
           <button class="filter-btn" data-type="hoodies">Hoodies (6)</button>
           <button class="filter-btn" data-type="paired">Grouped by Theme</button>
+          <button class="filter-btn" data-type="branding">Shop Logos (2)</button>
         </div>
         <div class="toolbar-divider"></div>
         <div class="filter-group" id="topicFilters" aria-label="Physics Topic Filter">
@@ -881,6 +889,46 @@
       });
     });
 
+    ITEMS.push({
+      cardId: 'logo-orbital-crest',
+      themeId: 'branding-1',
+      productType: 'branding',
+      productTypeLabel: 'Shop Logo · Concept 1',
+      baseSpec: 'SVG · Transparent PNG · 1200×1200',
+      title: 'Geekyard — Orbital Courtyard Crest',
+      punchline: 'Monogram G · Courtyard Arch · Celestial Orbits',
+      topic: 'quantum',
+      topicLabel: 'Brand Identity',
+      description: 'Single-color monoline crest combining the editorial serif "G" monogram, a courtyard arch ("Yard"), atomic orbital rings, and four-point star sparks above widely tracked GEEKYARD capitals.',
+      images: [
+        { src: './branding/geekyard_concept1_orbital_crest_cream.png', label: 'Warm Cream' },
+        { src: './branding/geekyard_concept1_orbital_crest_black.png', label: 'Matte Black' },
+        { src: './branding/geekyard_concept1_orbital_crest_white.png', label: 'Pure White' },
+        { src: './branding/geekyard_concept1_orbital_crest_transparent_dark.png', label: 'Transparent (Dark Ink)' },
+        { src: './branding/geekyard_concept1_orbital_crest.svg', label: 'Vector SVG' }
+      ]
+    });
+
+    ITEMS.push({
+      cardId: 'logo-scholar-compass',
+      themeId: 'branding-2',
+      productType: 'branding',
+      productTypeLabel: 'Shop Logo · Concept 2',
+      baseSpec: 'SVG · Transparent PNG · 1200×1200',
+      title: 'Geekyard — Scholar’s Compass & Book',
+      punchline: 'Open Almanac · Drafting Compass · Orbital Halo',
+      topic: 'mechanics',
+      topicLabel: 'Brand Identity',
+      description: 'Architectural single-weight line emblem pairing an open book of knowledge with a precision drafting compass and tilted orbital star halo—ideal for apparel neck labels, ceramic bottom stamps, and packaging.',
+      images: [
+        { src: './branding/geekyard_concept2_scholar_compass_cream.png', label: 'Warm Cream' },
+        { src: './branding/geekyard_concept2_scholar_compass_black.png', label: 'Matte Black' },
+        { src: './branding/geekyard_concept2_scholar_compass_white.png', label: 'Pure White' },
+        { src: './branding/geekyard_concept2_scholar_compass_transparent_dark.png', label: 'Transparent (Dark Ink)' },
+        { src: './branding/geekyard_concept2_scholar_compass.svg', label: 'Vector SVG' }
+      ]
+    });
+
     const state = {
       typeFilter: 'all',
       topicFilter: 'all',
@@ -958,7 +1006,7 @@
               data-card-id="${item.cardId}"
             />
             <span class="media-badge">${currentImg.label}</span>
-            <span class="media-type-tag">${item.productType === 'mug' ? 'Mug' : (item.productType === 'tshirt' ? 'T-Shirt' : 'Hoodie')}</span>
+            <span class="media-type-tag">${item.productType === 'mug' ? 'Mug' : (item.productType === 'tshirt' ? 'T-Shirt' : (item.productType === 'hoodie' ? 'Hoodie' : 'Brand Logo'))}</span>
             <span class="media-count">${idx + 1} / ${item.images.length}</span>
             ${hasMultiple ? `
               <button class="nav-arrow prev" data-action="prev" data-card-id="${item.cardId}" aria-label="Previous image">&larr;</button>
@@ -999,6 +1047,7 @@
       const mugs = ITEMS.filter(i => i.productType === 'mug' && topicMatch(i));
       const tshirts = ITEMS.filter(i => i.productType === 'tshirt' && topicMatch(i));
       const hoodies = ITEMS.filter(i => i.productType === 'hoodie' && topicMatch(i));
+      const logos = ITEMS.filter(i => i.productType === 'branding');
 
       let html = '';
       let shownItems = 0;
@@ -1070,6 +1119,22 @@
               </div>
               <div class="grid">
                 ${hoodies.map(renderCardHTML).join('')}
+              </div>
+            </section>
+          `;
+        }
+
+        if (state.typeFilter === 'all' || state.typeFilter === 'branding') {
+          shownItems += logos.length;
+          shownMockups += logos.reduce((s, i) => s + i.images.length, 0);
+          html += `
+            <section class="section-block">
+              <div class="section-header">
+                <h2 class="section-title">Geekyard Brand Identity &amp; Print-Ready Logos</h2>
+                <span class="section-subtitle">Single-Color Vector &amp; High-Res Lockups for Mugs, Neck Labels, Packaging &amp; Etsy Icon</span>
+              </div>
+              <div class="grid">
+                ${logos.map(renderCardHTML).join('')}
               </div>
             </section>
           `;

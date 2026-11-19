@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <style>
+    .line {
+      fill: none;
+      stroke: #181816;
+      stroke-width: 6.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .star {
+      fill: #fff;
+      stroke: #181816;
+      stroke-width: 6;
+      stroke-linejoin: miter;
+    }
+    .wordmark {
+      font-family: 'Cormorant Garamond', 'Didot', 'Bodoni MT', Georgia, serif;
+      font-size: 86px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      fill: #181816;
+      text-anchor: middle;
+    }
+  </style>
+
+  <!-- Courtyard Arch Frame -->
+  <path class="line" d="M 285 450 L 285 275 A 115 115 0 0 1 515 275 L 515 450 Z" />
+
+  <!-- Intersecting Orbital Ellipses -->
+  <ellipse class="line" cx="400" cy="330" rx="145" ry="62" transform="rotate(-36 400 330)" />
+  <ellipse class="line" cx="400" cy="330" rx="145" ry="62" transform="rotate(36 400 330)" />
+  <ellipse class="line" cx="400" cy="330" rx="152" ry="52" />
+
+  <!-- Classical Editorial Serif 'G' Monogram -->
+  <path class="line" d="M 455 280 A 78 78 0 1 0 462 365 L 462 335 L 424 335" stroke-width="11" />
+
+  <!-- Center & Upper Right Four-Point Celestial Stars -->
+  <path class="star" d="M 400 296 Q 403 327 434 330 Q 403 333 400 364 Q 397 333 366 330 Q 397 327 400 296 Z" />
+  <path class="star" d="M 488 188 Q 492 228 532 232 Q 492 236 488 276 Q 484 236 444 232 Q 484 228 488 188 Z" />
+
+  <!-- GEEKYARD Wordmark -->
+  <text x="410" y="575" class="wordmark">GEEKYARD</text>
+</svg>
