@@ -678,9 +678,9 @@
         ],
         tshirtImages: [
           { src: './tshirts/shrodingers/image.png',       label: 'Living Room (White)' },
-          { src: './tshirts/shrodingers/placement_1.png', label: 'Cafe (Black)' },
-          { src: './tshirts/shrodingers/placement_2.png', label: 'Park (Cream)' },
-          { src: './tshirts/shrodingers/placement_3.png', label: 'Studio (Black)' }
+          { src: './tshirts/shrodingers/placement_1.png', label: 'Gallery Loft (Black)' },
+          { src: './tshirts/shrodingers/placement_2.png', label: 'Rooftop (Cream)' },
+          { src: './tshirts/shrodingers/placement_3.png', label: 'Kitchen (Black)' }
         ]
       },
       {
@@ -699,10 +699,10 @@
           { src: './mugs/atoms/placement_3.png', label: 'Reading Corner' }
         ],
         tshirtImages: [
-          { src: './tshirts/atoms/image.png',       label: 'Living Room (White)' },
-          { src: './tshirts/atoms/placement_1.png', label: 'Cafe (Black)' },
-          { src: './tshirts/atoms/placement_2.png', label: 'Park (Cream)' },
-          { src: './tshirts/atoms/placement_3.png', label: 'Studio (Black)' }
+          { src: './tshirts/atoms/image.png',       label: 'Garden Patio (White)' },
+          { src: './tshirts/atoms/placement_1.png', label: 'Window Cafe (Black)' },
+          { src: './tshirts/atoms/placement_2.png', label: 'Window Bench (Cream)' },
+          { src: './tshirts/atoms/placement_3.png', label: 'Courtyard (Black)' }
         ]
       },
       {
@@ -721,10 +721,10 @@
           { src: './mugs/love/placement_3.png', label: 'Reading Corner' }
         ],
         tshirtImages: [
-          { src: './tshirts/love/image.png',       label: 'Living Room (White)' },
-          { src: './tshirts/love/placement_1.png', label: 'Cafe (Black)' },
-          { src: './tshirts/love/placement_2.png', label: 'Park (Cream)' },
-          { src: './tshirts/love/placement_3.png', label: 'Studio (Black)' }
+          { src: './tshirts/love/image.png',       label: 'Record Store (White)' },
+          { src: './tshirts/love/placement_1.png', label: 'Coworking (Black)' },
+          { src: './tshirts/love/placement_2.png', label: 'Park Walk (Cream)' },
+          { src: './tshirts/love/placement_3.png', label: 'Roastery (Black)' }
         ]
       },
       {
@@ -743,10 +743,10 @@
           { src: './mugs/energy/placement_3.png', label: 'Reading Corner' }
         ],
         tshirtImages: [
-          { src: './tshirts/energy/image.png',       label: 'Living Room (White)' },
-          { src: './tshirts/energy/placement_1.png', label: 'Cafe (Black)' },
-          { src: './tshirts/energy/placement_2.png', label: 'Park (Cream)' },
-          { src: './tshirts/energy/placement_3.png', label: 'Studio (Black)' }
+          { src: './tshirts/energy/image.png',       label: 'Conservatory (White)' },
+          { src: './tshirts/energy/placement_1.png', label: 'Studio Lounge (Black)' },
+          { src: './tshirts/energy/placement_2.png', label: 'Veranda (Cream)' },
+          { src: './tshirts/energy/placement_3.png', label: 'Gallery Loft (Black)' }
         ]
       },
       {
@@ -765,10 +765,10 @@
           { src: './mugs/force/placement_3.png', label: 'Reading Corner' }
         ],
         tshirtImages: [
-          { src: './tshirts/force/image.png',       label: 'Living Room (White)' },
-          { src: './tshirts/force/placement_1.png', label: 'Cafe (Black)' },
-          { src: './tshirts/force/placement_2.png', label: 'Park (Cream)' },
-          { src: './tshirts/force/placement_3.png', label: 'Studio (Black)' }
+          { src: './tshirts/force/image.png',       label: 'Design Studio (White)' },
+          { src: './tshirts/force/placement_1.png', label: 'Kitchen (Black)' },
+          { src: './tshirts/force/placement_2.png', label: 'Rooftop (Cream)' },
+          { src: './tshirts/force/placement_3.png', label: 'Courtyard (Black)' }
         ]
       },
       {
@@ -787,10 +787,10 @@
           { src: './mugs/entropy/placement_3.png', label: 'Reading Corner' }
         ],
         tshirtImages: [
-          { src: './tshirts/entropy/image.png',       label: 'Living Room (White)' },
-          { src: './tshirts/entropy/placement_1.png', label: 'Cafe (Black)' },
-          { src: './tshirts/entropy/placement_2.png', label: 'Park (Cream)' },
-          { src: './tshirts/entropy/placement_3.png', label: 'Studio (Black)' }
+          { src: './tshirts/entropy/image.png',       label: 'Window Bench (Cream)' },
+          { src: './tshirts/entropy/placement_1.png', label: 'Roastery (Black)' },
+          { src: './tshirts/entropy/placement_2.png', label: 'Garden Patio (White)' },
+          { src: './tshirts/entropy/placement_3.png', label: 'Coworking (Black)' }
         ]
       }
     ];
@@ -832,9 +832,38 @@
       lightboxCardId: null
     };
 
-    // Randomize starting mockup/model index across the 2x3 grid so horizontally OR vertically adjacent cards never display the same model/scene
-    function assignNonAdjacentDefaults(cards, numVariants) {
-      // Build a random permutation of [0, 1, 2, 3]
+    // Assign non-adjacent defaults for mugs, and ensure all 6 t-shirt cards show 6 completely unique models on load
+    function assignNonAdjacentDefaults(cards, numVariants, isTshirts = false) {
+      if (isTshirts) {
+        // The 6 t-shirt cards have 16 distinct models mapped across their 4 slots:
+        // schrodinger: [M1, M6, M7, M8]
+        // atoms:       [M5, M2, M10, M11]
+        // love:        [M9, M13, M3, M15]
+        // energy:      [M12, M4, M14, M6]
+        // force:       [M16, M8, M7, M11]
+        // entropy:     [M10, M15, M5, M13]
+        const tshirtModelMap = [
+          [1, 6, 7, 8],
+          [5, 2, 10, 11],
+          [9, 13, 3, 15],
+          [12, 4, 14, 6],
+          [16, 8, 7, 11],
+          [10, 15, 5, 13]
+        ];
+        const usedModels = new Set();
+        cards.forEach((card, cardIdx) => {
+          const slots = [0, 1, 2, 3];
+          for (let i = slots.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            const tmp = slots[i]; slots[i] = slots[j]; slots[j] = tmp;
+          }
+          const chosenSlot = slots.find(s => !usedModels.has(tshirtModelMap[cardIdx][s])) ?? slots[0];
+          usedModels.add(tshirtModelMap[cardIdx][chosenSlot]);
+          state.activeImageIdx[card.cardId] = chosenSlot;
+        });
+        return;
+      }
+
       const perm = Array.from({ length: numVariants }, (_, i) => i);
       for (let i = perm.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -842,21 +871,14 @@
         perm[i] = perm[j];
         perm[j] = tmp;
       }
-      // On a 3-column grid (2 rows of 3: indices 0,1,2 and 3,4,5):
-      // Row 0: [perm[0], perm[1], perm[2]]
-      // Row 1: [perm[3], perm[0], perm[1]]
-      // This guarantees:
-      // - No two horizontal neighbors (0-1, 1-2, 3-4, 4-5) share an index
-      // - No two vertical neighbors (0-3, 1-4, 2-5) share an index
-      // - No two 2-column neighbors (0-1, 2-3, 4-5 and vertical 0-2, 1-3, 2-4, 3-5) share an index!
       const pattern = [perm[0], perm[1], perm[2], perm[3], perm[0], perm[1]];
       cards.forEach((card, idx) => {
         state.activeImageIdx[card.cardId] = pattern[idx % pattern.length] % card.images.length;
       });
     }
 
-    assignNonAdjacentDefaults(ITEMS.filter(i => i.productType === 'mug'), 4);
-    assignNonAdjacentDefaults(ITEMS.filter(i => i.productType === 'tshirt'), 4);
+    assignNonAdjacentDefaults(ITEMS.filter(i => i.productType === 'mug'), 4, false);
+    assignNonAdjacentDefaults(ITEMS.filter(i => i.productType === 'tshirt'), 4, true);
 
     const catalogEl = document.getElementById('catalogContainer');
     const countLabelEl = document.getElementById('countLabel');
