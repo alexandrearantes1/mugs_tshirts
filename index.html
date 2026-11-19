@@ -568,9 +568,44 @@
       line-height: 1.5;
     }
 
+    .card-print-links {
+      margin-top: 0.55rem;
+      padding-top: 0.65rem;
+      border-top: 1px dashed var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .print-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-subtle);
+      margin-right: 0.15rem;
+    }
+
+    .print-pill {
+      font-size: 0.63rem;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      background: var(--surface-subtle);
+      padding: 0.18rem 0.48rem;
+      transition: border-color 0.2s ease, background 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .print-pill:hover {
+      border-color: var(--text);
+      background: var(--surface);
+    }
+
     .card-footer {
       margin-top: auto;
-      padding-top: 0.85rem;
+      padding-top: 0.75rem;
       border-top: 1px solid var(--border);
       display: flex;
       align-items: center;
@@ -723,12 +758,12 @@
         />
         <div class="brand-divider"></div>
         <div>
-          <div class="eyebrow"><span class="brand-dot"></span>Etsy &amp; Printify Collection</div>
+          <div class="eyebrow"><span class="brand-dot"></span>Printify &amp; Amazon Merch Collection</div>
           <h1>GEEKYARD</h1>
         </div>
       </div>
       <p class="header-meta">
-        Fine-line black and off-white ink illustrations across 11oz ceramic mugs, heavyweight cotton crew-neck t-shirts, and fleece pullover hoodies. Switch views on any card or click an image to inspect full resolution.
+        Fine-line black and off-white ink illustrations hallmarked with the bottom-centered GEEKYARD signature across 11oz Printify mugs and Amazon Merch tees &amp; hoodies. Download 300-DPI upload-ready PNGs directly from any card.
       </p>
     </header>
 
@@ -962,46 +997,87 @@
       }
     ];
 
+    const PRINT_SLUGS = {
+      schrodinger: 'schrodingers-cat',
+      atoms: 'dont-trust-atoms',
+      love: 'watt-is-love',
+      energy: 'potential-energy',
+      force: 'may-the-force',
+      entropy: 'entropy'
+    };
+
     const ITEMS = [];
     THEMES.forEach(t => {
+      const slug = PRINT_SLUGS[t.themeId];
       ITEMS.push({
         cardId: `mug-${t.themeId}`,
         themeId: t.themeId,
         productType: 'mug',
         productTypeLabel: '11oz Ceramic Mug',
-        baseSpec: '11oz White Ceramic',
+        baseSpec: 'Printify 11oz · 2475×1155',
         title: t.title,
         punchline: t.punchline,
         topic: t.topic,
         topicLabel: t.topicLabel,
         description: t.mugDesc,
-        images: t.mugImages
+        images: t.mugImages,
+        printLinks: [
+          {
+            label: 'Printify 11oz PNG',
+            href: `./print_files/printify_mugs_11oz/geekyard_${slug}_mug-11oz_printify_2475x1155_300dpi.png`,
+            download: `geekyard_${slug}_mug-11oz_printify_2475x1155_300dpi.png`
+          }
+        ]
       });
       ITEMS.push({
         cardId: `tshirt-${t.themeId}`,
         themeId: t.themeId,
         productType: 'tshirt',
         productTypeLabel: 'Unisex Crew-Neck Tee',
-        baseSpec: 'White · Cream · Black',
+        baseSpec: 'Amazon Merch · 4500×5400',
         title: t.title,
         punchline: t.punchline,
         topic: t.topic,
         topicLabel: t.topicLabel,
         description: t.tshirtDesc,
-        images: t.tshirtImages
+        images: t.tshirtImages,
+        printLinks: [
+          {
+            label: 'Dark Ink PNG',
+            href: `./print_files/amazon_merch_tshirts/geekyard_${slug}_tshirt_amazon-merch_4500x5400_dark-ink.png`,
+            download: `geekyard_${slug}_tshirt_amazon-merch_4500x5400_dark-ink.png`
+          },
+          {
+            label: 'Light Ink PNG',
+            href: `./print_files/amazon_merch_tshirts/geekyard_${slug}_tshirt_amazon-merch_4500x5400_light-ink.png`,
+            download: `geekyard_${slug}_tshirt_amazon-merch_4500x5400_light-ink.png`
+          }
+        ]
       });
       ITEMS.push({
         cardId: `hoodie-${t.themeId}`,
         themeId: t.themeId,
         productType: 'hoodie',
         productTypeLabel: 'Heavyweight Pullover Hoodie',
-        baseSpec: 'White · Cream · Black',
+        baseSpec: 'Amazon Merch · 4500×4050',
         title: t.title,
         punchline: t.punchline,
         topic: t.topic,
         topicLabel: t.topicLabel,
         description: t.hoodieDesc,
-        images: t.hoodieImages
+        images: t.hoodieImages,
+        printLinks: [
+          {
+            label: 'Dark Ink PNG',
+            href: `./print_files/amazon_merch_hoodies/geekyard_${slug}_hoodie_amazon-merch_4500x4050_dark-ink.png`,
+            download: `geekyard_${slug}_hoodie_amazon-merch_4500x4050_dark-ink.png`
+          },
+          {
+            label: 'Light Ink PNG',
+            href: `./print_files/amazon_merch_hoodies/geekyard_${slug}_hoodie_amazon-merch_4500x4050_light-ink.png`,
+            download: `geekyard_${slug}_hoodie_amazon-merch_4500x4050_light-ink.png`
+          }
+        ]
       });
     });
 
@@ -1160,9 +1236,17 @@
             <h3 class="card-title">${item.title}</h3>
             <div class="card-subtitle">“${item.punchline}”</div>
             <p class="card-desc">${item.description}</p>
+            ${item.printLinks && item.printLinks.length ? `
+              <div class="card-print-links">
+                <span class="print-label">300 DPI Upload:</span>
+                ${item.printLinks.map(pl => `
+                  <a class="print-pill" href="${pl.href}" download="${pl.download}">${pl.label}</a>
+                `).join('')}
+              </div>
+            ` : ''}
             <div class="card-footer">
               <span>${item.baseSpec}</span>
-              <a class="download-link" href="${currentImg.src}" download="${item.cardId}-${idx + 1}.png">Download Image</a>
+              <a class="download-link" href="${currentImg.src}" download="${item.cardId}-${idx + 1}.png">Download Mockup</a>
             </div>
           </div>
         </article>
@@ -1210,7 +1294,7 @@
             <section class="section-block">
               <div class="section-header">
                 <h2 class="section-title">11oz Ceramic Mug Collection</h2>
-                <span class="section-subtitle">Studio &amp; Lifestyle Placement Mockups (${mugs.length} designs)</span>
+                <span class="section-subtitle">Signature-Hallmarked Mockups &amp; Printify 11oz Upload PNGs (2475&times;1155, 300 DPI)</span>
               </div>
               <div class="grid">
                 ${mugs.map(renderCardHTML).join('')}
@@ -1226,7 +1310,7 @@
             <section class="section-block">
               <div class="section-header">
                 <h2 class="section-title">Heavyweight Cotton T-Shirt Collection</h2>
-                <span class="section-subtitle">Lifestyle Lookbook Across White, Cream &amp; Black Crew-Necks (${tshirts.length} designs)</span>
+                <span class="section-subtitle">Signature-Hallmarked Lookbook &amp; Amazon Merch Upload PNGs (4500&times;5400, 300 DPI)</span>
               </div>
               <div class="grid">
                 ${tshirts.map(renderCardHTML).join('')}
@@ -1242,7 +1326,7 @@
             <section class="section-block">
               <div class="section-header">
                 <h2 class="section-title">Heavyweight Fleece Pullover Hoodie Collection</h2>
-                <span class="section-subtitle">Lifestyle Lookbook Across White, Cream &amp; Black Hoodies (${hoodies.length} designs)</span>
+                <span class="section-subtitle">Pocket-Safe Signature Lookbook &amp; Amazon Merch Upload PNGs (4500&times;4050, 300 DPI)</span>
               </div>
               <div class="grid">
                 ${hoodies.map(renderCardHTML).join('')}

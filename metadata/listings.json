@@ -1,7 +1,42 @@
 {
-  "chat_title": "Custom Etsy Mug Mockup Creation",
+  "chat_title": "GEEKYARD — Minimalist Science Mugs & Apparel Collection",
   "source_url": "https://gemini.google.com/app/29986df0abc7edfd",
-  "store_description": "Welcome to our shop! This shop started quite simply: with a messy sketchbook, an over-caffeinated brain, and a deep love for the kind of quick-witted, nerdy humor that makes you snort-laugh into your morning brew. Every single design starts as a doodle or hand-inked sketch and is printed to order on cozy, durable shirts and sturdy ceramic mugs.",
+  "store_description": "Welcome to GEEKYARD! Minimalist fine-line science and physics illustrations hallmarked with the signature GEEKYARD aerodynamic emblem—produced on 11oz ceramic mugs (Printify) and heavyweight cotton crew-neck t-shirts & pullover hoodies (Amazon Merch on Demand).",
+  "branding": {
+    "logo_svg_dark": "branding/geekyard_logo.svg",
+    "logo_svg_light": "branding/geekyard_logo_light.svg",
+    "logo_png_transparent_dark": "branding/geekyard_logo_transparent_dark.png",
+    "logo_png_transparent_light": "branding/geekyard_logo_transparent_light.png",
+    "logo_png_mono_dark": "branding/geekyard_logo_mono_dark.png",
+    "signature_mockups": [
+      "branding/mockup_signature_mug.png",
+      "branding/mockup_signature_tshirt.png",
+      "branding/mockup_signature_hoodie.png"
+    ]
+  },
+  "print_specifications": {
+    "printify_mug_11oz": {
+      "dimensions_px": "2475x1155",
+      "physical_in": "8.25x3.85",
+      "dpi": 300,
+      "color_space": "sRGB",
+      "format": "Transparent RGBA PNG (Double-Sided Wraparound)"
+    },
+    "amazon_merch_tshirt": {
+      "dimensions_px": "4500x5400",
+      "physical_in": "15x18",
+      "dpi": 300,
+      "color_space": "sRGB",
+      "format": "Transparent RGBA PNG (< 25 MB, Dark-Ink & Light-Ink Variants)"
+    },
+    "amazon_merch_hoodie": {
+      "dimensions_px": "4500x4050",
+      "physical_in": "15x13.5",
+      "dpi": 300,
+      "color_space": "sRGB",
+      "format": "Transparent RGBA PNG (< 25 MB, Pocket-Safe Front, Dark-Ink & Light-Ink Variants)"
+    }
+  },
   "mugs": [
     {
       "id": "mug-schrodinger-01",
@@ -9,12 +44,15 @@
       "title": "Schrödinger’s Cat",
       "subtitle": "Wanted: Dead & Alive",
       "category": "Quantum Mechanics",
-      "mockup_base": "11oz White Ceramic Mug",
-      "description": "For those mornings when you’re feeling a bit of both, this \"Schrödinger’s Cat\" mug features my original, hand-drawn illustration of physics’ most famous—and famously undecided—feline. I loved bringing this nerdy paradox to life with a detailed, split-character sketch that gently blends an adorable kitty with a skeletal side. It’s printed on a sturdy, cozy ceramic mug that is both microwave and dishwasher safe, ready to hold your favorite morning brew. A perfect, quirky gift for science geeks, cat lovers, or deep thinkers, it’s sure to add a little existential humor to any desk. Because each one is printed to order just for you, your mug gets made with plenty of care the moment you purchase.",
-      "print_files": [
-        "mugs/shrodingers/shordinger_print_2.png",
-        "mugs/shrodingers/Shrodinger_print.png"
-      ],
+      "mockup_base": "11oz White Ceramic Mug (Printify)",
+      "description": "For those mornings when you’re feeling a bit of both, this \"Schrödinger’s Cat\" mug features an original fine-line split-character illustration blending an alive feline half with a skeletal half inside an open box, hallmarked beneath with the minimalist GEEKYARD signature.",
+      "print_files": {
+        "printify_11oz": "print_files/printify_mugs_11oz/geekyard_schrodingers-cat_mug-11oz_printify_2475x1155_300dpi.png",
+        "legacy_source_prints": [
+          "mugs/shrodingers/shordinger_print_2.png",
+          "mugs/shrodingers/Shrodinger_print.png"
+        ]
+      },
       "images": [
         { "file": "mugs/shrodingers/shrodinger_2.png", "label": "Sunlit Desk", "type": "mockup" },
         { "file": "mugs/shrodingers/placement_1.png", "label": "Workspace Desk", "type": "mockup" },
@@ -29,8 +67,11 @@
       "title": "Don't Trust Atoms",
       "subtitle": "They Make Up Everything",
       "category": "Atomic Physics",
-      "mockup_base": "11oz White Ceramic Mug",
-      "description": "Delicate Bohr-inspired orbital rings, nucleus cluster, and sine wave harmonics rendered in crisp minimalist line art on a white 11oz ceramic mug.",
+      "mockup_base": "11oz White Ceramic Mug (Printify)",
+      "description": "Delicate Bohr-inspired orbital rings, nucleus cluster, and sine wave harmonics rendered in crisp minimalist line art with the bottom-centered GEEKYARD signature on a white 11oz ceramic mug.",
+      "print_files": {
+        "printify_11oz": "print_files/printify_mugs_11oz/geekyard_dont-trust-atoms_mug-11oz_printify_2475x1155_300dpi.png"
+      },
       "images": [
         { "file": "mugs/atoms/image.png", "label": "Sunlit Desk", "type": "mockup" },
         { "file": "mugs/atoms/placement_1.png", "label": "Workspace Desk", "type": "mockup" },
@@ -44,8 +85,11 @@
       "title": "Watt Is Love",
       "subtitle": "Baby Don't Hertz Me",
       "category": "Electromagnetism",
-      "mockup_base": "11oz White Ceramic Mug",
-      "description": "Fine-line filament bulb with heart-shaped glowing wire, orbital electron paths, and frequency wave accents.",
+      "mockup_base": "11oz White Ceramic Mug (Printify)",
+      "description": "Fine-line filament bulb with heart-shaped glowing wire, orbital electron paths, frequency wave accents, and the minimalist GEEKYARD hallmark.",
+      "print_files": {
+        "printify_11oz": "print_files/printify_mugs_11oz/geekyard_watt-is-love_mug-11oz_printify_2475x1155_300dpi.png"
+      },
       "images": [
         { "file": "mugs/love/image.png", "label": "Sunlit Desk", "type": "mockup" },
         { "file": "mugs/love/placement_1.png", "label": "Workspace Desk", "type": "mockup" },
@@ -59,8 +103,11 @@
       "title": "I Have Potential",
       "subtitle": "Energy",
       "category": "Classical Mechanics",
-      "mockup_base": "11oz White Ceramic Mug",
-      "description": "A sphere poised at the crest of a steep incline overlaid with dashed trajectory curves, harmonic waves, and subtle celestial coordinates.",
+      "mockup_base": "11oz White Ceramic Mug (Printify)",
+      "description": "A sphere poised at the crest of a steep incline overlaid with dashed trajectory curves, harmonic waves, celestial coordinates, and the bottom-centered GEEKYARD signature.",
+      "print_files": {
+        "printify_11oz": "print_files/printify_mugs_11oz/geekyard_potential-energy_mug-11oz_printify_2475x1155_300dpi.png"
+      },
       "images": [
         { "file": "mugs/energy/image.png", "label": "Sunlit Desk", "type": "mockup" },
         { "file": "mugs/energy/placement_1.png", "label": "Workspace Desk", "type": "mockup" },
@@ -74,8 +121,11 @@
       "title": "May The Force",
       "subtitle": "Be Mass Times Acceleration",
       "category": "Newtonian Mechanics",
-      "mockup_base": "11oz White Ceramic Mug",
-      "description": "Newton's falling apple encircled by planetary orbits, gravitational field lines, and minimalist star accents.",
+      "mockup_base": "11oz White Ceramic Mug (Printify)",
+      "description": "Newton's falling apple encircled by planetary orbits, gravitational field lines, minimalist star accents, and the signature GEEKYARD emblem.",
+      "print_files": {
+        "printify_11oz": "print_files/printify_mugs_11oz/geekyard_may-the-force_mug-11oz_printify_2475x1155_300dpi.png"
+      },
       "images": [
         { "file": "mugs/force/image.png", "label": "Sunlit Desk", "type": "mockup" },
         { "file": "mugs/force/placement_1.png", "label": "Workspace Desk", "type": "mockup" },
@@ -89,8 +139,11 @@
       "title": "Entropy",
       "subtitle": "It Is Not What It Used To Be",
       "category": "Thermodynamics",
-      "mockup_base": "11oz White Ceramic Mug",
-      "description": "Fine-line hourglass with flowing sand, intersecting wave functions, and dispersing orbital particles.",
+      "mockup_base": "11oz White Ceramic Mug (Printify)",
+      "description": "Fine-line hourglass with flowing sand, intersecting wave functions, dispersing orbital particles, and the bottom-centered GEEKYARD signature.",
+      "print_files": {
+        "printify_11oz": "print_files/printify_mugs_11oz/geekyard_entropy_mug-11oz_printify_2475x1155_300dpi.png"
+      },
       "images": [
         { "file": "mugs/entropy/image.png", "label": "Sunlit Desk", "type": "mockup" },
         { "file": "mugs/entropy/placement_1.png", "label": "Workspace Desk", "type": "mockup" },
@@ -106,12 +159,16 @@
       "title": "Schrödinger’s Cat",
       "subtitle": "Wanted: Dead & Alive",
       "category": "Quantum Mechanics",
-      "mockup_base": "Unisex Heavyweight Cotton Crew-Neck Tee (White, Cream, Black)",
+      "mockup_base": "Amazon Merch on Demand Standard T-Shirt (White, Cream, Black)",
+      "print_files": {
+        "amazon_merch_dark_ink": "print_files/amazon_merch_tshirts/geekyard_schrodingers-cat_tshirt_amazon-merch_4500x5400_dark-ink.png",
+        "amazon_merch_light_ink": "print_files/amazon_merch_tshirts/geekyard_schrodingers-cat_tshirt_amazon-merch_4500x5400_light-ink.png"
+      },
       "images": [
         { "file": "tshirts/shrodingers/image.png", "label": "Living Room (White Tee)", "type": "mockup" },
-        { "file": "tshirts/shrodingers/placement_1.png", "label": "Coffee Shop (Black Tee)", "type": "mockup" },
-        { "file": "tshirts/shrodingers/placement_2.png", "label": "Park Walk (Cream Tee)", "type": "mockup" },
-        { "file": "tshirts/shrodingers/placement_3.png", "label": "Studio Lounge (Black Tee)", "type": "mockup" }
+        { "file": "tshirts/shrodingers/placement_1.png", "label": "Gallery Loft (Black Tee)", "type": "mockup" },
+        { "file": "tshirts/shrodingers/placement_2.png", "label": "Rooftop (Cream Tee)", "type": "mockup" },
+        { "file": "tshirts/shrodingers/placement_3.png", "label": "Kitchen (Black Tee)", "type": "mockup" }
       ]
     },
     {
@@ -120,12 +177,16 @@
       "title": "Don't Trust Atoms",
       "subtitle": "They Make Up Everything",
       "category": "Atomic Physics",
-      "mockup_base": "Unisex Heavyweight Cotton Crew-Neck Tee (White, Cream, Black)",
+      "mockup_base": "Amazon Merch on Demand Standard T-Shirt (White, Cream, Black)",
+      "print_files": {
+        "amazon_merch_dark_ink": "print_files/amazon_merch_tshirts/geekyard_dont-trust-atoms_tshirt_amazon-merch_4500x5400_dark-ink.png",
+        "amazon_merch_light_ink": "print_files/amazon_merch_tshirts/geekyard_dont-trust-atoms_tshirt_amazon-merch_4500x5400_light-ink.png"
+      },
       "images": [
-        { "file": "tshirts/atoms/image.png", "label": "Living Room (White Tee)", "type": "mockup" },
-        { "file": "tshirts/atoms/placement_1.png", "label": "Coffee Shop (Black Tee)", "type": "mockup" },
-        { "file": "tshirts/atoms/placement_2.png", "label": "Park Walk (Cream Tee)", "type": "mockup" },
-        { "file": "tshirts/atoms/placement_3.png", "label": "Studio Lounge (Black Tee)", "type": "mockup" }
+        { "file": "tshirts/atoms/image.png", "label": "Garden Patio (White Tee)", "type": "mockup" },
+        { "file": "tshirts/atoms/placement_1.png", "label": "Window Cafe (Black Tee)", "type": "mockup" },
+        { "file": "tshirts/atoms/placement_2.png", "label": "Window Bench (Cream Tee)", "type": "mockup" },
+        { "file": "tshirts/atoms/placement_3.png", "label": "Courtyard (Black Tee)", "type": "mockup" }
       ]
     },
     {
@@ -134,12 +195,16 @@
       "title": "Watt Is Love",
       "subtitle": "Baby Don't Hertz Me",
       "category": "Electromagnetism",
-      "mockup_base": "Unisex Heavyweight Cotton Crew-Neck Tee (White, Cream, Black)",
+      "mockup_base": "Amazon Merch on Demand Standard T-Shirt (White, Cream, Black)",
+      "print_files": {
+        "amazon_merch_dark_ink": "print_files/amazon_merch_tshirts/geekyard_watt-is-love_tshirt_amazon-merch_4500x5400_dark-ink.png",
+        "amazon_merch_light_ink": "print_files/amazon_merch_tshirts/geekyard_watt-is-love_tshirt_amazon-merch_4500x5400_light-ink.png"
+      },
       "images": [
-        { "file": "tshirts/love/image.png", "label": "Living Room (White Tee)", "type": "mockup" },
-        { "file": "tshirts/love/placement_1.png", "label": "Coffee Shop (Black Tee)", "type": "mockup" },
+        { "file": "tshirts/love/image.png", "label": "Record Store (White Tee)", "type": "mockup" },
+        { "file": "tshirts/love/placement_1.png", "label": "Coworking (Black Tee)", "type": "mockup" },
         { "file": "tshirts/love/placement_2.png", "label": "Park Walk (Cream Tee)", "type": "mockup" },
-        { "file": "tshirts/love/placement_3.png", "label": "Studio Lounge (Black Tee)", "type": "mockup" }
+        { "file": "tshirts/love/placement_3.png", "label": "Roastery (Black Tee)", "type": "mockup" }
       ]
     },
     {
@@ -148,12 +213,16 @@
       "title": "I Have Potential",
       "subtitle": "Energy",
       "category": "Classical Mechanics",
-      "mockup_base": "Unisex Heavyweight Cotton Crew-Neck Tee (White, Cream, Black)",
+      "mockup_base": "Amazon Merch on Demand Standard T-Shirt (White, Cream, Black)",
+      "print_files": {
+        "amazon_merch_dark_ink": "print_files/amazon_merch_tshirts/geekyard_potential-energy_tshirt_amazon-merch_4500x5400_dark-ink.png",
+        "amazon_merch_light_ink": "print_files/amazon_merch_tshirts/geekyard_potential-energy_tshirt_amazon-merch_4500x5400_light-ink.png"
+      },
       "images": [
-        { "file": "tshirts/energy/image.png", "label": "Living Room (White Tee)", "type": "mockup" },
-        { "file": "tshirts/energy/placement_1.png", "label": "Coffee Shop (Black Tee)", "type": "mockup" },
-        { "file": "tshirts/energy/placement_2.png", "label": "Park Walk (Cream Tee)", "type": "mockup" },
-        { "file": "tshirts/energy/placement_3.png", "label": "Studio Lounge (Black Tee)", "type": "mockup" }
+        { "file": "tshirts/energy/image.png", "label": "Conservatory (White Tee)", "type": "mockup" },
+        { "file": "tshirts/energy/placement_1.png", "label": "Studio Lounge (Black Tee)", "type": "mockup" },
+        { "file": "tshirts/energy/placement_2.png", "label": "Veranda (Cream Tee)", "type": "mockup" },
+        { "file": "tshirts/energy/placement_3.png", "label": "Gallery Loft (Black Tee)", "type": "mockup" }
       ]
     },
     {
@@ -162,12 +231,16 @@
       "title": "May The Force",
       "subtitle": "Be Mass Times Acceleration",
       "category": "Newtonian Mechanics",
-      "mockup_base": "Unisex Heavyweight Cotton Crew-Neck Tee (White, Cream, Black)",
+      "mockup_base": "Amazon Merch on Demand Standard T-Shirt (White, Cream, Black)",
+      "print_files": {
+        "amazon_merch_dark_ink": "print_files/amazon_merch_tshirts/geekyard_may-the-force_tshirt_amazon-merch_4500x5400_dark-ink.png",
+        "amazon_merch_light_ink": "print_files/amazon_merch_tshirts/geekyard_may-the-force_tshirt_amazon-merch_4500x5400_light-ink.png"
+      },
       "images": [
-        { "file": "tshirts/force/image.png", "label": "Living Room (White Tee)", "type": "mockup" },
-        { "file": "tshirts/force/placement_1.png", "label": "Coffee Shop (Black Tee)", "type": "mockup" },
-        { "file": "tshirts/force/placement_2.png", "label": "Park Walk (Cream Tee)", "type": "mockup" },
-        { "file": "tshirts/force/placement_3.png", "label": "Studio Lounge (Black Tee)", "type": "mockup" }
+        { "file": "tshirts/force/image.png", "label": "Design Studio (White Tee)", "type": "mockup" },
+        { "file": "tshirts/force/placement_1.png", "label": "Kitchen (Black Tee)", "type": "mockup" },
+        { "file": "tshirts/force/placement_2.png", "label": "Rooftop (Cream Tee)", "type": "mockup" },
+        { "file": "tshirts/force/placement_3.png", "label": "Courtyard (Black Tee)", "type": "mockup" }
       ]
     },
     {
@@ -176,7 +249,11 @@
       "title": "Entropy",
       "subtitle": "It Is Not What It Used To Be",
       "category": "Thermodynamics",
-      "mockup_base": "Unisex Heavyweight Cotton Crew-Neck Tee (White, Cream, Black)",
+      "mockup_base": "Amazon Merch on Demand Standard T-Shirt (White, Cream, Black)",
+      "print_files": {
+        "amazon_merch_dark_ink": "print_files/amazon_merch_tshirts/geekyard_entropy_tshirt_amazon-merch_4500x5400_dark-ink.png",
+        "amazon_merch_light_ink": "print_files/amazon_merch_tshirts/geekyard_entropy_tshirt_amazon-merch_4500x5400_light-ink.png"
+      },
       "images": [
         { "file": "tshirts/entropy/image.png", "label": "Window Bench (Cream Tee)", "type": "mockup" },
         { "file": "tshirts/entropy/placement_1.png", "label": "Roastery (Black Tee)", "type": "mockup" },
@@ -192,7 +269,11 @@
       "title": "Schrödinger’s Cat",
       "subtitle": "Wanted: Dead & Alive",
       "category": "Quantum Mechanics",
-      "mockup_base": "Unisex Heavyweight Fleece Pullover Hoodie (White, Cream, Black)",
+      "mockup_base": "Amazon Merch on Demand Pullover Hoodie (White, Cream, Black)",
+      "print_files": {
+        "amazon_merch_dark_ink": "print_files/amazon_merch_hoodies/geekyard_schrodingers-cat_hoodie_amazon-merch_4500x4050_dark-ink.png",
+        "amazon_merch_light_ink": "print_files/amazon_merch_hoodies/geekyard_schrodingers-cat_hoodie_amazon-merch_4500x4050_light-ink.png"
+      },
       "images": [
         { "file": "hoodies/shrodingers/image.png", "label": "Living Room (White Hoodie)", "type": "mockup" },
         { "file": "hoodies/shrodingers/placement_1.png", "label": "Gallery Loft (Black Hoodie)", "type": "mockup" },
@@ -206,7 +287,11 @@
       "title": "Don't Trust Atoms",
       "subtitle": "They Make Up Everything",
       "category": "Atomic Physics",
-      "mockup_base": "Unisex Heavyweight Fleece Pullover Hoodie (White, Cream, Black)",
+      "mockup_base": "Amazon Merch on Demand Pullover Hoodie (White, Cream, Black)",
+      "print_files": {
+        "amazon_merch_dark_ink": "print_files/amazon_merch_hoodies/geekyard_dont-trust-atoms_hoodie_amazon-merch_4500x4050_dark-ink.png",
+        "amazon_merch_light_ink": "print_files/amazon_merch_hoodies/geekyard_dont-trust-atoms_hoodie_amazon-merch_4500x4050_light-ink.png"
+      },
       "images": [
         { "file": "hoodies/atoms/image.png", "label": "Garden Patio (White Hoodie)", "type": "mockup" },
         { "file": "hoodies/atoms/placement_1.png", "label": "Window Cafe (Black Hoodie)", "type": "mockup" },
@@ -220,7 +305,11 @@
       "title": "Watt Is Love",
       "subtitle": "Baby Don't Hertz Me",
       "category": "Electromagnetism",
-      "mockup_base": "Unisex Heavyweight Fleece Pullover Hoodie (White, Cream, Black)",
+      "mockup_base": "Amazon Merch on Demand Pullover Hoodie (White, Cream, Black)",
+      "print_files": {
+        "amazon_merch_dark_ink": "print_files/amazon_merch_hoodies/geekyard_watt-is-love_hoodie_amazon-merch_4500x4050_dark-ink.png",
+        "amazon_merch_light_ink": "print_files/amazon_merch_hoodies/geekyard_watt-is-love_hoodie_amazon-merch_4500x4050_light-ink.png"
+      },
       "images": [
         { "file": "hoodies/love/image.png", "label": "Record Store (White Hoodie)", "type": "mockup" },
         { "file": "hoodies/love/placement_1.png", "label": "Coworking (Black Hoodie)", "type": "mockup" },
@@ -234,7 +323,11 @@
       "title": "I Have Potential",
       "subtitle": "Energy",
       "category": "Classical Mechanics",
-      "mockup_base": "Unisex Heavyweight Fleece Pullover Hoodie (White, Cream, Black)",
+      "mockup_base": "Amazon Merch on Demand Pullover Hoodie (White, Cream, Black)",
+      "print_files": {
+        "amazon_merch_dark_ink": "print_files/amazon_merch_hoodies/geekyard_potential-energy_hoodie_amazon-merch_4500x4050_dark-ink.png",
+        "amazon_merch_light_ink": "print_files/amazon_merch_hoodies/geekyard_potential-energy_hoodie_amazon-merch_4500x4050_light-ink.png"
+      },
       "images": [
         { "file": "hoodies/energy/image.png", "label": "Conservatory (White Hoodie)", "type": "mockup" },
         { "file": "hoodies/energy/placement_1.png", "label": "Studio Lounge (Black Hoodie)", "type": "mockup" },
@@ -248,7 +341,11 @@
       "title": "May The Force",
       "subtitle": "Be Mass Times Acceleration",
       "category": "Newtonian Mechanics",
-      "mockup_base": "Unisex Heavyweight Fleece Pullover Hoodie (White, Cream, Black)",
+      "mockup_base": "Amazon Merch on Demand Pullover Hoodie (White, Cream, Black)",
+      "print_files": {
+        "amazon_merch_dark_ink": "print_files/amazon_merch_hoodies/geekyard_may-the-force_hoodie_amazon-merch_4500x4050_dark-ink.png",
+        "amazon_merch_light_ink": "print_files/amazon_merch_hoodies/geekyard_may-the-force_hoodie_amazon-merch_4500x4050_light-ink.png"
+      },
       "images": [
         { "file": "hoodies/force/image.png", "label": "Design Studio (White Hoodie)", "type": "mockup" },
         { "file": "hoodies/force/placement_1.png", "label": "Kitchen (Black Hoodie)", "type": "mockup" },
@@ -262,7 +359,11 @@
       "title": "Entropy",
       "subtitle": "It Is Not What It Used To Be",
       "category": "Thermodynamics",
-      "mockup_base": "Unisex Heavyweight Fleece Pullover Hoodie (White, Cream, Black)",
+      "mockup_base": "Amazon Merch on Demand Pullover Hoodie (White, Cream, Black)",
+      "print_files": {
+        "amazon_merch_dark_ink": "print_files/amazon_merch_hoodies/geekyard_entropy_hoodie_amazon-merch_4500x4050_dark-ink.png",
+        "amazon_merch_light_ink": "print_files/amazon_merch_hoodies/geekyard_entropy_hoodie_amazon-merch_4500x4050_light-ink.png"
+      },
       "images": [
         { "file": "hoodies/entropy/image.png", "label": "Window Bench (Cream Hoodie)", "type": "mockup" },
         { "file": "hoodies/entropy/placement_1.png", "label": "Roastery (Black Hoodie)", "type": "mockup" },
